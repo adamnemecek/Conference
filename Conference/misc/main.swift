@@ -1,0 +1,2 @@
+
+ApplicationManager.shared.run()
