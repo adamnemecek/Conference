@@ -1,4 +1,5 @@
 
+import AppKit
 import AVFoundation
 
 protocol VideoSessionDelegate: class {
@@ -23,7 +24,7 @@ class VideoSession: NSObject {
   
   override init() {
     session = AVCaptureSession()
-    camera = AVCaptureDevice.default(for: .video)! //defaultDevice(withMediaType: AVMediaTypeVideo)
+    camera = AVCaptureDevice.default(for: .video)!
     input = try! AVCaptureDeviceInput(device: camera)
     output = AVCaptureVideoDataOutput()
     serialQueue = DispatchQueue(label: "CameraBufferQueue")
@@ -33,7 +34,7 @@ class VideoSession: NSObject {
     session.addInput(input)
     session.addOutput(output)
     output.videoSettings = [
-      AVVideoCodecKey: AVVideoCodecH264
+      String(kCVPixelBufferPixelFormatTypeKey): kCVPixelFormatType_32BGRA
     ]
     output.setSampleBufferDelegate(self, queue: serialQueue)
     NotificationCenter.default.addObserver(forName: .AVCaptureSessionDidStartRunning, object: session, queue: nil) { notification in
@@ -63,10 +64,12 @@ class VideoSession: NSObject {
 
 extension VideoSession: AVCaptureVideoDataOutputSampleBufferDelegate {
   
-  func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
-    let videoData = Data()
+  func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+    let ciimage = CIImage(cvPixelBuffer: imageBuffer)
+    let frameData = NSBitmapImageRep(ciImage: ciimage).representation(using: .jpeg, properties: [:])!
     DispatchQueue.main.async {
-      self.delegate?.videoSession(self, didReceiveBuffer: videoData)
+      self.delegate?.videoSession(self, didReceiveBuffer: frameData)
     }
   }
   
