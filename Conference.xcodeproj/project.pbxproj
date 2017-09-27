@@ -7,39 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		956517AA1F57524600B42036 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956517A91F57524600B42036 /* MenuManager.swift */; };
-		95C430A01F5937A500C961BF /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4309F1F5937A500C961BF /* ButtonComponent.swift */; };
-		95C430A21F5A70B100C961BF /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C430A11F5A70B100C961BF /* Appearance.swift */; };
-		95DA38621F57262E00A1B9F0 /* VideoSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA38521F57262E00A1B9F0 /* VideoSessionController.swift */; };
-		95DA38631F57262E00A1B9F0 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA38531F57262E00A1B9F0 /* ContainerController.swift */; };
-		95DA38641F57262E00A1B9F0 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA38541F57262E00A1B9F0 /* MainController.swift */; };
-		95DA38661F57262E00A1B9F0 /* VideoSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA38571F57262E00A1B9F0 /* VideoSession.swift */; };
-		95DA38671F57262E00A1B9F0 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA38591F57262E00A1B9F0 /* ApplicationManager.swift */; };
-		95DA38691F57262E00A1B9F0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA385C1F57262E00A1B9F0 /* Extension.swift */; };
-		95DA386B1F57262E00A1B9F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA385E1F57262E00A1B9F0 /* main.swift */; };
-		95DA386C1F57262E00A1B9F0 /* MouseEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA385F1F57262E00A1B9F0 /* MouseEventMonitor.swift */; };
-		95DA386D1F57262E00A1B9F0 /* VideoPreviewViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA38611F57262E00A1B9F0 /* VideoPreviewViewComponent.swift */; };
-		95E1EFE11F57E76E00EDF625 /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1EFE01F57E76E00EDF625 /* ConnectionController.swift */; };
-		95E1EFE31F58452000EDF625 /* TextInputViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1EFE21F58452000EDF625 /* TextInputViewComponent.swift */; };
+		957A76E61F7BD73A005D32ED /* TextInputViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */; };
+		957A76E71F7BD73A005D32ED /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D31F7BD739005D32ED /* ButtonComponent.swift */; };
+		957A76E81F7BD73A005D32ED /* VideoPreviewViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D41F7BD739005D32ED /* VideoPreviewViewComponent.swift */; };
+		957A76E91F7BD73A005D32ED /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D51F7BD739005D32ED /* Appearance.swift */; };
+		957A76EA1F7BD73A005D32ED /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D71F7BD739005D32ED /* ApplicationManager.swift */; };
+		957A76EB1F7BD73A005D32ED /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D81F7BD739005D32ED /* MenuManager.swift */; };
+		957A76EC1F7BD73A005D32ED /* MouseEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76DB1F7BD73A005D32ED /* MouseEventMonitor.swift */; };
+		957A76ED1F7BD73A005D32ED /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76DC1F7BD73A005D32ED /* Extension.swift */; };
+		957A76EE1F7BD73A005D32ED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76DD1F7BD73A005D32ED /* main.swift */; };
+		957A76F01F7BD73A005D32ED /* VideoSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E01F7BD73A005D32ED /* VideoSession.swift */; };
+		957A76F11F7BD73A005D32ED /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E21F7BD73A005D32ED /* ContainerController.swift */; };
+		957A76F21F7BD73A005D32ED /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E31F7BD73A005D32ED /* MainController.swift */; };
+		957A76F31F7BD73A005D32ED /* VideoSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E41F7BD73A005D32ED /* VideoSessionController.swift */; };
+		957A76F41F7BD73A005D32ED /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E51F7BD73A005D32ED /* ConnectionController.swift */; };
+		957A76FF1F7BD7FF005D32ED /* UdpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76F81F7BD7FF005D32ED /* UdpSocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		956517A91F57524600B42036 /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
-		95C4309F1F5937A500C961BF /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
-		95C430A11F5A70B100C961BF /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputViewComponent.swift; sourceTree = "<group>"; };
+		957A76D31F7BD739005D32ED /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		957A76D41F7BD739005D32ED /* VideoPreviewViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreviewViewComponent.swift; sourceTree = "<group>"; };
+		957A76D51F7BD739005D32ED /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		957A76D71F7BD739005D32ED /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		957A76D81F7BD739005D32ED /* MenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
+		957A76DB1F7BD73A005D32ED /* MouseEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEventMonitor.swift; sourceTree = "<group>"; };
+		957A76DC1F7BD73A005D32ED /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		957A76DD1F7BD73A005D32ED /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		957A76DE1F7BD73A005D32ED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		957A76E01F7BD73A005D32ED /* VideoSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSession.swift; sourceTree = "<group>"; };
+		957A76E21F7BD73A005D32ED /* ContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		957A76E31F7BD73A005D32ED /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		957A76E41F7BD73A005D32ED /* VideoSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSessionController.swift; sourceTree = "<group>"; };
+		957A76E51F7BD73A005D32ED /* ConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
+		957A76F81F7BD7FF005D32ED /* UdpSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdpSocket.swift; sourceTree = "<group>"; };
 		95DA38501F5725D300A1B9F0 /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		95DA38521F57262E00A1B9F0 /* VideoSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSessionController.swift; sourceTree = "<group>"; };
-		95DA38531F57262E00A1B9F0 /* ContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
-		95DA38541F57262E00A1B9F0 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		95DA38571F57262E00A1B9F0 /* VideoSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSession.swift; sourceTree = "<group>"; };
-		95DA38591F57262E00A1B9F0 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
-		95DA385C1F57262E00A1B9F0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		95DA385D1F57262E00A1B9F0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95DA385E1F57262E00A1B9F0 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		95DA385F1F57262E00A1B9F0 /* MouseEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEventMonitor.swift; sourceTree = "<group>"; };
-		95DA38611F57262E00A1B9F0 /* VideoPreviewViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreviewViewComponent.swift; sourceTree = "<group>"; };
-		95E1EFE01F57E76E00EDF625 /* ConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
-		95E1EFE21F58452000EDF625 /* TextInputViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,71 +55,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95DA38161F5722C100A1B9F0 = {
+		957A76D11F7BD739005D32ED /* view */ = {
 			isa = PBXGroup;
 			children = (
-				95DA38511F57262E00A1B9F0 /* controller */,
-				95DA38581F57262E00A1B9F0 /* manager */,
-				95DA385A1F57262E00A1B9F0 /* misc */,
-				95DA38561F57262E00A1B9F0 /* video */,
-				95DA38601F57262E00A1B9F0 /* view */,
-				95DA38501F5725D300A1B9F0 /* Conference.app */,
+				957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */,
+				957A76D31F7BD739005D32ED /* ButtonComponent.swift */,
+				957A76D41F7BD739005D32ED /* VideoPreviewViewComponent.swift */,
+				957A76D51F7BD739005D32ED /* Appearance.swift */,
 			);
+			name = view;
+			path = Conference/view;
 			sourceTree = "<group>";
 		};
-		95DA38511F57262E00A1B9F0 /* controller */ = {
+		957A76D61F7BD739005D32ED /* manager */ = {
 			isa = PBXGroup;
 			children = (
-				95DA38541F57262E00A1B9F0 /* MainController.swift */,
-				95E1EFE01F57E76E00EDF625 /* ConnectionController.swift */,
-				95DA38521F57262E00A1B9F0 /* VideoSessionController.swift */,
-				95DA38531F57262E00A1B9F0 /* ContainerController.swift */,
-			);
-			name = controller;
-			path = Conference/controller;
-			sourceTree = "<group>";
-		};
-		95DA38561F57262E00A1B9F0 /* video */ = {
-			isa = PBXGroup;
-			children = (
-				95DA38571F57262E00A1B9F0 /* VideoSession.swift */,
-			);
-			name = video;
-			path = Conference/video;
-			sourceTree = "<group>";
-		};
-		95DA38581F57262E00A1B9F0 /* manager */ = {
-			isa = PBXGroup;
-			children = (
-				95DA38591F57262E00A1B9F0 /* ApplicationManager.swift */,
-				956517A91F57524600B42036 /* MenuManager.swift */,
+				957A76D71F7BD739005D32ED /* ApplicationManager.swift */,
+				957A76D81F7BD739005D32ED /* MenuManager.swift */,
 			);
 			name = manager;
 			path = Conference/manager;
 			sourceTree = "<group>";
 		};
-		95DA385A1F57262E00A1B9F0 /* misc */ = {
+		957A76D91F7BD739005D32ED /* network */ = {
 			isa = PBXGroup;
 			children = (
-				95DA385D1F57262E00A1B9F0 /* Info.plist */,
-				95DA385E1F57262E00A1B9F0 /* main.swift */,
-				95DA385C1F57262E00A1B9F0 /* Extension.swift */,
-				95DA385F1F57262E00A1B9F0 /* MouseEventMonitor.swift */,
+				957A76F81F7BD7FF005D32ED /* UdpSocket.swift */,
+			);
+			name = network;
+			path = Conference/network;
+			sourceTree = "<group>";
+		};
+		957A76DA1F7BD73A005D32ED /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				957A76DB1F7BD73A005D32ED /* MouseEventMonitor.swift */,
+				957A76DC1F7BD73A005D32ED /* Extension.swift */,
+				957A76DD1F7BD73A005D32ED /* main.swift */,
+				957A76DE1F7BD73A005D32ED /* Info.plist */,
 			);
 			name = misc;
 			path = Conference/misc;
 			sourceTree = "<group>";
 		};
-		95DA38601F57262E00A1B9F0 /* view */ = {
+		957A76DF1F7BD73A005D32ED /* video */ = {
 			isa = PBXGroup;
 			children = (
-				95DA38611F57262E00A1B9F0 /* VideoPreviewViewComponent.swift */,
-				95E1EFE21F58452000EDF625 /* TextInputViewComponent.swift */,
-				95C4309F1F5937A500C961BF /* ButtonComponent.swift */,
-				95C430A11F5A70B100C961BF /* Appearance.swift */,
+				957A76E01F7BD73A005D32ED /* VideoSession.swift */,
 			);
-			name = view;
-			path = Conference/view;
+			name = video;
+			path = Conference/video;
+			sourceTree = "<group>";
+		};
+		957A76E11F7BD73A005D32ED /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				957A76E21F7BD73A005D32ED /* ContainerController.swift */,
+				957A76E31F7BD73A005D32ED /* MainController.swift */,
+				957A76E41F7BD73A005D32ED /* VideoSessionController.swift */,
+				957A76E51F7BD73A005D32ED /* ConnectionController.swift */,
+			);
+			name = controller;
+			path = Conference/controller;
+			sourceTree = "<group>";
+		};
+		95DA38161F5722C100A1B9F0 = {
+			isa = PBXGroup;
+			children = (
+				957A76E11F7BD73A005D32ED /* controller */,
+				957A76D61F7BD739005D32ED /* manager */,
+				957A76D91F7BD739005D32ED /* network */,
+				957A76DF1F7BD73A005D32ED /* video */,
+				957A76D11F7BD739005D32ED /* view */,
+				957A76DA1F7BD73A005D32ED /* misc */,
+				95DA38501F5725D300A1B9F0 /* Conference.app */,
+			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +163,7 @@
 				TargetAttributes = {
 					95DA381E1F5722C100A1B9F0 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -193,20 +206,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956517AA1F57524600B42036 /* MenuManager.swift in Sources */,
-				95C430A01F5937A500C961BF /* ButtonComponent.swift in Sources */,
-				95DA38671F57262E00A1B9F0 /* ApplicationManager.swift in Sources */,
-				95DA386B1F57262E00A1B9F0 /* main.swift in Sources */,
-				95DA38661F57262E00A1B9F0 /* VideoSession.swift in Sources */,
-				95DA38621F57262E00A1B9F0 /* VideoSessionController.swift in Sources */,
-				95DA38641F57262E00A1B9F0 /* MainController.swift in Sources */,
-				95E1EFE31F58452000EDF625 /* TextInputViewComponent.swift in Sources */,
-				95DA38631F57262E00A1B9F0 /* ContainerController.swift in Sources */,
-				95E1EFE11F57E76E00EDF625 /* ConnectionController.swift in Sources */,
-				95DA386D1F57262E00A1B9F0 /* VideoPreviewViewComponent.swift in Sources */,
-				95C430A21F5A70B100C961BF /* Appearance.swift in Sources */,
-				95DA38691F57262E00A1B9F0 /* Extension.swift in Sources */,
-				95DA386C1F57262E00A1B9F0 /* MouseEventMonitor.swift in Sources */,
+				957A76F01F7BD73A005D32ED /* VideoSession.swift in Sources */,
+				957A76EB1F7BD73A005D32ED /* MenuManager.swift in Sources */,
+				957A76FF1F7BD7FF005D32ED /* UdpSocket.swift in Sources */,
+				957A76E61F7BD73A005D32ED /* TextInputViewComponent.swift in Sources */,
+				957A76EE1F7BD73A005D32ED /* main.swift in Sources */,
+				957A76F21F7BD73A005D32ED /* MainController.swift in Sources */,
+				957A76E81F7BD73A005D32ED /* VideoPreviewViewComponent.swift in Sources */,
+				957A76EA1F7BD73A005D32ED /* ApplicationManager.swift in Sources */,
+				957A76F31F7BD73A005D32ED /* VideoSessionController.swift in Sources */,
+				957A76E71F7BD73A005D32ED /* ButtonComponent.swift in Sources */,
+				957A76E91F7BD73A005D32ED /* Appearance.swift in Sources */,
+				957A76EC1F7BD73A005D32ED /* MouseEventMonitor.swift in Sources */,
+				957A76F41F7BD73A005D32ED /* ConnectionController.swift in Sources */,
+				957A76F11F7BD73A005D32ED /* ContainerController.swift in Sources */,
+				957A76ED1F7BD73A005D32ED /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +336,7 @@
 		95DA382E1F5722C100A1B9F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -332,6 +347,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Conference;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -339,6 +356,7 @@
 		95DA382F1F5722C100A1B9F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -349,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Conference;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
