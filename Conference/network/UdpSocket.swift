@@ -4,13 +4,28 @@ import Darwin
 
 class UdpSocket {
   
-  let host: String
-  let port: Int
-  let queue = DispatchQueue(label: "foo")
+  let handle: Int32
+  let target: UnsafeMutablePointer<Darwin.sockaddr>
+  let queue: DispatchQueue
   
-  init(host: String, port: Int) {
-    self.host = host
-    self.port = port
+  init?() {
+    handle = Darwin.socket(AF_INET6, SOCK_DGRAM, IPPROTO_UDP)
+    guard handle != -1 else {
+      return nil
+    }
+    target = UnsafeMutablePointer<Darwin.sockaddr>.allocate(capacity: 1)
+    queue = DispatchQueue(label: "UdpSocket")
+  }
+  
+  func send(data: Data) -> Bool {
+    let bytes = [UInt8](data)
+    let addressSize = socklen_t(MemoryLayout<Darwin.sockaddr>.size)
+    let sentCount = Darwin.sendto(handle, bytes, bytes.count, 0, target, addressSize)
+    return sentCount != -1
+  }
+  
+  func close() {
+    Darwin.close(handle)
   }
   
   func connect(host: String, port: Int, callback: @escaping (Bool) -> Void) {
