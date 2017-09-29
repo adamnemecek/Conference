@@ -7,7 +7,6 @@ class ApplicationManager {
   
   let menuManager: MenuManager
   let mainController: MainController
-
   
   init() {
     menuManager = MenuManager()

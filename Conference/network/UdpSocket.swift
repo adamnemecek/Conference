@@ -1,47 +1,50 @@
 
-import Foundation
 import Darwin
+import Foundation
 
 class UdpSocket {
   
   let handle: Int32
-  let target: UnsafeMutablePointer<Darwin.sockaddr>
-  let queue: DispatchQueue
+  var addressInfo: UnsafeMutablePointer<addrinfo>?
   
   init?() {
-    handle = Darwin.socket(AF_INET6, SOCK_DGRAM, IPPROTO_UDP)
+    handle = socket(AF_INET6, SOCK_DGRAM, IPPROTO_UDP)
     guard handle != -1 else {
       return nil
     }
-    target = UnsafeMutablePointer<Darwin.sockaddr>.allocate(capacity: 1)
-    queue = DispatchQueue(label: "UdpSocket")
+  }
+  
+  deinit {
+    close(handle)
   }
   
   func send(data: Data) -> Bool {
+    guard let address = addressInfo?.pointee.ai_addr else {
+      return false
+    }
     let bytes = [UInt8](data)
-    let addressSize = socklen_t(MemoryLayout<Darwin.sockaddr>.size)
-    let sentCount = Darwin.sendto(handle, bytes, bytes.count, 0, target, addressSize)
+    let addressSize = socklen_t(MemoryLayout<sockaddr>.size)
+    let sentCount = sendto(handle, bytes, bytes.count, 0, address, addressSize)
     return sentCount != -1
   }
   
-  func close() {
-    Darwin.close(handle)
-  }
-  
-  func connect(host: String, port: Int, callback: @escaping (Bool) -> Void) {
+  func resolve(host: String, port: UInt16, queue: DispatchQueue, callback: @escaping (Bool) -> Void) {
     queue.async {
       let port = String(port)
-      var hints = addrinfo(ai_flags: 0, ai_family: AF_INET, ai_socktype: SOCK_DGRAM, ai_protocol: IPPROTO_UDP, ai_addrlen: 0, ai_canonname: nil, ai_addr: nil, ai_next: nil)
-      var result: UnsafeMutablePointer<addrinfo>? = nil
-      guard getaddrinfo(host, port, &hints, &result) == 0 else {
-        DispatchQueue.main.async {
-          callback(false)
-        }
+      let hints = UnsafeMutablePointer<addrinfo>.allocate(capacity: 1)
+      let result = UnsafeMutablePointer<UnsafeMutablePointer<addrinfo>?>.allocate(capacity: 1)
+      defer {
+        hints.deallocate(capacity: 1)
+        result.deallocate(capacity: 1)
+      }
+      hints.pointee = addrinfo(ai_flags: 0, ai_family: AF_INET, ai_socktype: SOCK_DGRAM, ai_protocol: IPPROTO_UDP, ai_addrlen: 0, ai_canonname: nil, ai_addr: nil, ai_next: nil)
+      let returnStatus = getaddrinfo(host, port, hints, result)
+      guard returnStatus == 0 else {
+        callback(false)
         return
       }
-      DispatchQueue.main.async {
-        callback(true)
-      }
+      self.addressInfo = result.pointee
+      callback(true)
     }
   }
   

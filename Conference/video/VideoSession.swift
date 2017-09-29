@@ -33,11 +33,9 @@ class VideoSession: NSObject {
     session.sessionPreset = AVCaptureSession.Preset.medium
     session.addInput(input)
     session.addOutput(output)
-    /*
     output.videoSettings = [
       String(kCVPixelBufferPixelFormatTypeKey): kCVPixelFormatType_32BGRA
     ]
- */
     output.setSampleBufferDelegate(self, queue: serialQueue)
     NotificationCenter.default.addObserver(forName: .AVCaptureSessionDidStartRunning, object: session, queue: nil) { notification in
       self.delegate?.didStart(session: self)
