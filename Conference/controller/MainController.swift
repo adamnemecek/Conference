@@ -9,8 +9,6 @@ class MainController {
   let videoSessionController: VideoSessionController
   let mouseEventMonitor: MouseEventMonitor
   
-  let socket = UdpSocket()
-  
   init() {
     window = MainControllerWindow()
     containerController = ContainerController()
@@ -24,7 +22,6 @@ class MainController {
   }
   
 }
-
 
 extension MainController: ConnectionControllerDelegate {
   
