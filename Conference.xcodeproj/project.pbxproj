@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9564ED021F7E800A00B0FB87 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564ED011F7E800A00B0FB87 /* Tests.swift */; };
+		9564ED021F7E800A00B0FB87 /* UdpSocketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564ED011F7E800A00B0FB87 /* UdpSocketTest.swift */; };
 		9564ED091F7E815F00B0FB87 /* UdpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76F81F7BD7FF005D32ED /* UdpSocket.swift */; };
 		957A76E61F7BD73A005D32ED /* TextInputViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */; };
 		957A76E71F7BD73A005D32ED /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D31F7BD739005D32ED /* ButtonComponent.swift */; };
@@ -15,7 +15,6 @@
 		957A76E91F7BD73A005D32ED /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D51F7BD739005D32ED /* Appearance.swift */; };
 		957A76EA1F7BD73A005D32ED /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D71F7BD739005D32ED /* ApplicationManager.swift */; };
 		957A76EB1F7BD73A005D32ED /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D81F7BD739005D32ED /* MenuManager.swift */; };
-		957A76EC1F7BD73A005D32ED /* MouseEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76DB1F7BD73A005D32ED /* MouseEventMonitor.swift */; };
 		957A76ED1F7BD73A005D32ED /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76DC1F7BD73A005D32ED /* Extension.swift */; };
 		957A76EE1F7BD73A005D32ED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76DD1F7BD73A005D32ED /* main.swift */; };
 		957A76F01F7BD73A005D32ED /* VideoSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E01F7BD73A005D32ED /* VideoSession.swift */; };
@@ -24,6 +23,9 @@
 		957A76F31F7BD73A005D32ED /* VideoSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E41F7BD73A005D32ED /* VideoSessionController.swift */; };
 		957A76F41F7BD73A005D32ED /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E51F7BD73A005D32ED /* ConnectionController.swift */; };
 		957A76FF1F7BD7FF005D32ED /* UdpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76F81F7BD7FF005D32ED /* UdpSocket.swift */; };
+		958CD4541F8228A800D453C8 /* Sha256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CD4521F8228A800D453C8 /* Sha256.swift */; };
+		958CD4551F8228A800D453C8 /* Aes256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CD4531F8228A800D453C8 /* Aes256.swift */; };
+		958CD4581F82292100D453C8 /* MouseEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CD4571F82292100D453C8 /* MouseEventMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,16 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9564ED011F7E800A00B0FB87 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		9564ED011F7E800A00B0FB87 /* UdpSocketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdpSocketTest.swift; sourceTree = "<group>"; };
 		9564ED031F7E800A00B0FB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9564ED0A1F7E826B00B0FB87 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9564ED0A1F7E826B00B0FB87 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = /Users/johannesauer/Documents/Conference/build/Debug/Tests.xctest; sourceTree = "<absolute>"; };
 		957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputViewComponent.swift; sourceTree = "<group>"; };
 		957A76D31F7BD739005D32ED /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		957A76D41F7BD739005D32ED /* VideoPreviewViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreviewViewComponent.swift; sourceTree = "<group>"; };
 		957A76D51F7BD739005D32ED /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		957A76D71F7BD739005D32ED /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		957A76D81F7BD739005D32ED /* MenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
-		957A76DB1F7BD73A005D32ED /* MouseEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEventMonitor.swift; sourceTree = "<group>"; };
 		957A76DC1F7BD73A005D32ED /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		957A76DD1F7BD73A005D32ED /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		957A76DE1F7BD73A005D32ED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +57,11 @@
 		957A76E41F7BD73A005D32ED /* VideoSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSessionController.swift; sourceTree = "<group>"; };
 		957A76E51F7BD73A005D32ED /* ConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
 		957A76F81F7BD7FF005D32ED /* UdpSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdpSocket.swift; sourceTree = "<group>"; };
-		95DA38501F5725D300A1B9F0 /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		958CD4521F8228A800D453C8 /* Sha256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sha256.swift; sourceTree = "<group>"; };
+		958CD4531F8228A800D453C8 /* Aes256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aes256.swift; sourceTree = "<group>"; };
+		958CD4571F82292100D453C8 /* MouseEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEventMonitor.swift; sourceTree = "<group>"; };
+		958CD4591F82293500D453C8 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		95DA38501F5725D300A1B9F0 /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Conference.app; path = /Users/johannesauer/Documents/Conference/build/Debug/Conference.app; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +85,8 @@
 		9564ED001F7E800A00B0FB87 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9564ED011F7E800A00B0FB87 /* Tests.swift */,
 				9564ED031F7E800A00B0FB87 /* Info.plist */,
+				9564ED011F7E800A00B0FB87 /* UdpSocketTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -120,7 +125,7 @@
 		957A76DA1F7BD73A005D32ED /* misc */ = {
 			isa = PBXGroup;
 			children = (
-				957A76DB1F7BD73A005D32ED /* MouseEventMonitor.swift */,
+				958CD4591F82293500D453C8 /* BridgingHeader.h */,
 				957A76DC1F7BD73A005D32ED /* Extension.swift */,
 				957A76DD1F7BD73A005D32ED /* main.swift */,
 				957A76DE1F7BD73A005D32ED /* Info.plist */,
@@ -150,18 +155,37 @@
 			path = Conference/controller;
 			sourceTree = "<group>";
 		};
+		958CD4511F8228A800D453C8 /* crypto */ = {
+			isa = PBXGroup;
+			children = (
+				958CD4521F8228A800D453C8 /* Sha256.swift */,
+				958CD4531F8228A800D453C8 /* Aes256.swift */,
+			);
+			name = crypto;
+			path = Conference/crypto;
+			sourceTree = "<group>";
+		};
+		958CD4561F82292100D453C8 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				958CD4571F82292100D453C8 /* MouseEventMonitor.swift */,
+			);
+			name = event;
+			path = Conference/event;
+			sourceTree = "<group>";
+		};
 		95DA38161F5722C100A1B9F0 = {
 			isa = PBXGroup;
 			children = (
+				958CD4561F82292100D453C8 /* event */,
+				958CD4511F8228A800D453C8 /* crypto */,
 				957A76E11F7BD73A005D32ED /* controller */,
 				957A76D61F7BD739005D32ED /* manager */,
 				957A76D91F7BD739005D32ED /* network */,
 				957A76DF1F7BD73A005D32ED /* video */,
 				957A76D11F7BD739005D32ED /* view */,
 				957A76DA1F7BD73A005D32ED /* misc */,
-				95DA38501F5725D300A1B9F0 /* Conference.app */,
 				9564ED001F7E800A00B0FB87 /* Tests */,
-				9564ED0A1F7E826B00B0FB87 /* Tests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,7 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9564ED091F7E815F00B0FB87 /* UdpSocket.swift in Sources */,
-				9564ED021F7E800A00B0FB87 /* Tests.swift in Sources */,
+				9564ED021F7E800A00B0FB87 /* UdpSocketTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +302,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				958CD4551F8228A800D453C8 /* Aes256.swift in Sources */,
+				958CD4541F8228A800D453C8 /* Sha256.swift in Sources */,
 				957A76F01F7BD73A005D32ED /* VideoSession.swift in Sources */,
 				957A76EB1F7BD73A005D32ED /* MenuManager.swift in Sources */,
 				957A76FF1F7BD7FF005D32ED /* UdpSocket.swift in Sources */,
@@ -285,11 +311,11 @@
 				957A76EE1F7BD73A005D32ED /* main.swift in Sources */,
 				957A76F21F7BD73A005D32ED /* MainController.swift in Sources */,
 				957A76E81F7BD73A005D32ED /* VideoPreviewViewComponent.swift in Sources */,
+				958CD4581F82292100D453C8 /* MouseEventMonitor.swift in Sources */,
 				957A76EA1F7BD73A005D32ED /* ApplicationManager.swift in Sources */,
 				957A76F31F7BD73A005D32ED /* VideoSessionController.swift in Sources */,
 				957A76E71F7BD73A005D32ED /* ButtonComponent.swift in Sources */,
 				957A76E91F7BD73A005D32ED /* Appearance.swift in Sources */,
-				957A76EC1F7BD73A005D32ED /* MouseEventMonitor.swift in Sources */,
 				957A76F41F7BD73A005D32ED /* ConnectionController.swift in Sources */,
 				957A76F11F7BD73A005D32ED /* ContainerController.swift in Sources */,
 				957A76ED1F7BD73A005D32ED /* Extension.swift in Sources */,
@@ -317,6 +343,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.livelycode.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -331,6 +358,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.livelycode.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -455,7 +483,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Conference;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Conference/misc/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -475,7 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Conference;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Conference/misc/BridgingHeader.h;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

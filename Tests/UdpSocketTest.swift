@@ -1,7 +1,7 @@
 
 import XCTest
 
-class Tests: XCTestCase {
+class UdpSocketTest: XCTestCase {
     
     func testResolveValidHost() {
       let expectation = XCTestExpectation(description: "Resolve valid domain")
