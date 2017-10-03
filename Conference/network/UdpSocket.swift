@@ -11,15 +11,33 @@ struct UdpSocket {
     Darwin.close(handle)
   }
   
-  func send(data: Data) -> Bool {
-    var localAddress = address
-    let bytes = [UInt8](data)
-    let addressSize = socklen_t(MemoryLayout<sockaddr>.size)
-    let sentCount = sendto(handle, bytes, bytes.count, 0, &localAddress, addressSize)
-    return sentCount != -1
+  func send(data: Data) {
+    DispatchQueue.global().async {
+      var localAddress = self.address
+      let bytes = [UInt8](data)
+      let addressSize = socklen_t(MemoryLayout<sockaddr>.size)
+      sendto(self.handle, bytes, bytes.count, 0, &localAddress, addressSize)
+    }
   }
   
-  static func resolve(host: String, port: UInt16, callback: @escaping (UdpSocket?) -> Void) {
+  func receive(queue: DispatchQueue, callback: @escaping (Data) -> Void) {
+    DispatchQueue.global().async {
+      let maxDatagramSize = 65507
+      var data = Data(capacity: maxDatagramSize)
+      let receivedByteCount = data.withUnsafeMutableBytes { dataBuffer in
+        return recv(self.handle, dataBuffer, maxDatagramSize, 0)
+      }
+      guard receivedByteCount != -1 else {
+        return
+      }
+      data.count = receivedByteCount
+      queue.async {
+        callback(data)
+      }
+    }
+  }
+  
+  static func resolve(host: String, port: UInt16, queue: DispatchQueue, callback: @escaping (UdpSocket?) -> Void) {
     DispatchQueue.global().async {
       let port = String(port)
       var hints = addrinfo(ai_flags: 0, ai_family: AF_INET, ai_socktype: SOCK_DGRAM, ai_protocol: IPPROTO_UDP, ai_addrlen: 0, ai_canonname: nil, ai_addr: nil, ai_next: nil)
@@ -27,14 +45,14 @@ struct UdpSocket {
       let returnStatus = getaddrinfo(host, port, &hints, &result)
       let socketHandle = Darwin.socket(AF_INET6, SOCK_DGRAM, IPPROTO_UDP)
       guard returnStatus == 0, socketHandle != -1, let address = result?.pointee.ai_addr.pointee else {
-        DispatchQueue.main.async {
+        queue.async {
           callback(nil)
         }
         return
       }
       freeaddrinfo(result)
       let socket = UdpSocket(handle: socketHandle, address: address)
-      DispatchQueue.main.async {
+      queue.async {
         callback(socket)
       }
     }

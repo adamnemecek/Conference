@@ -41,7 +41,8 @@
 /* Begin PBXFileReference section */
 		9564ED011F7E800A00B0FB87 /* UdpSocketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdpSocketTest.swift; sourceTree = "<group>"; };
 		9564ED031F7E800A00B0FB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9564ED0A1F7E826B00B0FB87 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = /Users/johannesauer/Documents/Conference/build/Debug/Tests.xctest; sourceTree = "<absolute>"; };
+		956F34701F83D7BB00D5A02E /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		956F34711F83D7BB00D5A02E /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputViewComponent.swift; sourceTree = "<group>"; };
 		957A76D31F7BD739005D32ED /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		957A76D41F7BD739005D32ED /* VideoPreviewViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreviewViewComponent.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		958CD4531F8228A800D453C8 /* Aes256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aes256.swift; sourceTree = "<group>"; };
 		958CD4571F82292100D453C8 /* MouseEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEventMonitor.swift; sourceTree = "<group>"; };
 		958CD4591F82293500D453C8 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		95DA38501F5725D300A1B9F0 /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Conference.app; path = /Users/johannesauer/Documents/Conference/build/Debug/Conference.app; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +186,8 @@
 				957A76D11F7BD739005D32ED /* view */,
 				957A76DA1F7BD73A005D32ED /* misc */,
 				9564ED001F7E800A00B0FB87 /* Tests */,
+				956F34701F83D7BB00D5A02E /* Conference.app */,
+				956F34711F83D7BB00D5A02E /* Tests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,7 +209,7 @@
 			);
 			name = Tests;
 			productName = Tests;
-			productReference = 9564ED0A1F7E826B00B0FB87 /* Tests.xctest */;
+			productReference = 956F34711F83D7BB00D5A02E /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		95DA381E1F5722C100A1B9F0 /* Conference */ = {
@@ -224,7 +226,7 @@
 			);
 			name = Conference;
 			productName = Conference;
-			productReference = 95DA38501F5725D300A1B9F0 /* Conference.app */;
+			productReference = 956F34701F83D7BB00D5A02E /* Conference.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
