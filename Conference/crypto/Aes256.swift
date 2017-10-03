@@ -16,7 +16,7 @@ enum Aes256CryptOperation {
   
 }
 
-func Aes256Crypt(operation: Aes256CryptOperation,  data: Data, iv: Data, key: Data) -> Data? {
+func Aes256Crypt(operation: Aes256CryptOperation, data: Data, iv: Data, key: Data) -> Data? {
   let algorithm = CCAlgorithm(kCCAlgorithmAES)
   let options = CCOptions(kCCOptionPKCS7Padding)
   var ciphertext = Data(count: data.count + kCCBlockSizeAES128)
