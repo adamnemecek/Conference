@@ -1,53 +1,35 @@
 
-import Foundation
-
-enum Aes256CryptOperation {
-  case encrypt
-  case decrypt
-  
-  var ccOperation: CCOperation {
-    switch self {
-    case .encrypt:
-      return CCOperation(kCCEncrypt)
-    case .decrypt:
-      return CCOperation(kCCDecrypt)
-    }
-  }
-  
-}
-
-func Aes256Crypt(operation: Aes256CryptOperation, data: Data, iv: Data, key: Data) -> Data? {
+func Aes256Encrypt(cleartext: [UInt8], password: String) -> [UInt8] {
+  let operation = CCOperation(kCCEncrypt)
   let algorithm = CCAlgorithm(kCCAlgorithmAES)
   let options = CCOptions(kCCOptionPKCS7Padding)
-  var ciphertext = Data(count: data.count + kCCBlockSizeAES128)
+  let salt = RandomNumberGenerator(count: kCCBlockSizeAES128)
+  let iv = RandomNumberGenerator(count: kCCBlockSizeAES128)
+  let key = Aes256Key(password: password, salt: salt)
+  var ciphertext = [UInt8](repeating: 0, count: cleartext.count + kCCBlockSizeAES128)
   var encryptedSize = 0
-  let cryptStatus = data.withUnsafeBytes { dataBuffer in
-    return key.withUnsafeBytes { keyBuffer in
-      return iv.withUnsafeBytes { ivBuffer in
-        return ciphertext.withUnsafeMutableBytes { ciphertextBuffer in
-          return CCCrypt(operation.ccOperation, algorithm, options, keyBuffer, key.count, ivBuffer, dataBuffer, data.count, ciphertextBuffer, ciphertext.count, &encryptedSize)
-        }
-      }
-    }
-  }
-  guard cryptStatus == kCCSuccess else {
-    return nil
-  }
-  ciphertext.count = encryptedSize
-  return ciphertext
+  CCCrypt(operation, algorithm, options, key, key.count, iv, cleartext, cleartext.count, &ciphertext, ciphertext.count, &encryptedSize)
+  return salt + iv + Array(ciphertext[0..<encryptedSize])
 }
 
-func Aes256InitializationVector() -> Data? {
-  var initializationVector = Data(count: kCCBlockSizeAES128)
-  let status = initializationVector.withUnsafeMutableBytes { ivBuffer in
-    return SecRandomCopyBytes(kSecRandomDefault, kCCBlockSizeAES128, ivBuffer)
-  }
-  guard status == errSecSuccess else {
-    return nil
-  }
-  return initializationVector
+func Aes256Decrypt(ciphertext: [UInt8], password: String) -> [UInt8] {
+  let operation = CCOperation(kCCDecrypt)
+  let algorithm = CCAlgorithm(kCCAlgorithmAES)
+  let options = CCOptions(kCCOptionPKCS7Padding)
+  let salt = RandomNumberGenerator(count: kCCBlockSizeAES128)
+  let iv = RandomNumberGenerator(count: kCCBlockSizeAES128)
+  let key = Aes256Key(password: password, salt: salt)
+  var cleartext = [UInt8](repeating: 0, count: ciphertext.count)
+  var encryptedSize = 0
+  CCCrypt(operation, algorithm, options, key, key.count, iv, ciphertext, ciphertext.count, &cleartext, cleartext.count, &encryptedSize)
+  return salt + iv + Array(cleartext[0..<encryptedSize])
 }
 
-func Aes256Key(password: String) -> Data {
-  return Data()
+func Aes256Key(password: String, salt: [UInt8]) -> [UInt8] {
+  let pbkdfAlgorithm = CCPBKDFAlgorithm(kCCPBKDF2)
+  let hashAlgorithm = CCPseudoRandomAlgorithm(kCCPRFHmacAlgSHA256)
+  let rounds = UInt32(8192)
+  var key = [UInt8](repeating: 0, count: kCCKeySizeAES128)
+  CCKeyDerivationPBKDF(pbkdfAlgorithm, password, password.characters.count, salt, salt.count, hashAlgorithm, rounds, &key, kCCKeySizeAES128)
+  return key
 }

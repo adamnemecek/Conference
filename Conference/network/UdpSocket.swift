@@ -20,7 +20,7 @@ struct UdpSocket {
   
   func receive(queue: DispatchQueue, callback: @escaping (Data) -> Void) {
     DispatchQueue.global().async {
-      let maxDatagramSize = 65507
+      let maxDatagramSize = Int(UInt16.max)
       var data = Data(capacity: maxDatagramSize)
       let receivedByteCount = data.withUnsafeMutableBytes { dataBuffer in
         return Darwin.recv(self.handle, dataBuffer, maxDatagramSize, 0)

@@ -26,6 +26,7 @@
 		958CD4541F8228A800D453C8 /* Sha256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CD4521F8228A800D453C8 /* Sha256.swift */; };
 		958CD4551F8228A800D453C8 /* Aes256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CD4531F8228A800D453C8 /* Aes256.swift */; };
 		958CD4581F82292100D453C8 /* MouseEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CD4571F82292100D453C8 /* MouseEventMonitor.swift */; };
+		95FE8C5C1F8A4DB4002556EA /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE8C5B1F8A4DB4002556EA /* RandomNumberGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		958CD4531F8228A800D453C8 /* Aes256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aes256.swift; sourceTree = "<group>"; };
 		958CD4571F82292100D453C8 /* MouseEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEventMonitor.swift; sourceTree = "<group>"; };
 		958CD4591F82293500D453C8 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		95FE8C5B1F8A4DB4002556EA /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			children = (
 				958CD4521F8228A800D453C8 /* Sha256.swift */,
 				958CD4531F8228A800D453C8 /* Aes256.swift */,
+				95FE8C5B1F8A4DB4002556EA /* RandomNumberGenerator.swift */,
 			);
 			name = crypto;
 			path = Conference/crypto;
@@ -174,9 +177,17 @@
 			path = Conference/event;
 			sourceTree = "<group>";
 		};
+		9596D2971F87C2EC0069E4C1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		95DA38161F5722C100A1B9F0 = {
 			isa = PBXGroup;
 			children = (
+				9596D2971F87C2EC0069E4C1 /* model */,
 				958CD4561F82292100D453C8 /* event */,
 				958CD4511F8228A800D453C8 /* crypto */,
 				957A76E11F7BD73A005D32ED /* controller */,
@@ -312,6 +323,7 @@
 				957A76E61F7BD73A005D32ED /* TextInputViewComponent.swift in Sources */,
 				957A76EE1F7BD73A005D32ED /* main.swift in Sources */,
 				957A76F21F7BD73A005D32ED /* MainController.swift in Sources */,
+				95FE8C5C1F8A4DB4002556EA /* RandomNumberGenerator.swift in Sources */,
 				957A76E81F7BD73A005D32ED /* VideoPreviewViewComponent.swift in Sources */,
 				958CD4581F82292100D453C8 /* MouseEventMonitor.swift in Sources */,
 				957A76EA1F7BD73A005D32ED /* ApplicationManager.swift in Sources */,
