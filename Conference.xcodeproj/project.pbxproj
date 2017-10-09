@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		952528B31F8B5CB600054309 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952528B21F8B5CB600054309 /* AVFoundation.framework */; };
+		952528B51F8B9EA100054309 /* VideoViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952528B41F8B9EA100054309 /* VideoViewComponent.swift */; };
 		9564ED021F7E800A00B0FB87 /* UdpSocketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564ED011F7E800A00B0FB87 /* UdpSocketTest.swift */; };
 		9564ED091F7E815F00B0FB87 /* UdpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76F81F7BD7FF005D32ED /* UdpSocket.swift */; };
 		957A76E61F7BD73A005D32ED /* TextInputViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		952528B21F8B5CB600054309 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		952528B41F8B9EA100054309 /* VideoViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewComponent.swift; sourceTree = "<group>"; };
 		9564ED011F7E800A00B0FB87 /* UdpSocketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdpSocketTest.swift; sourceTree = "<group>"; };
 		9564ED031F7E800A00B0FB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956F34701F83D7BB00D5A02E /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,12 +82,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952528B31F8B5CB600054309 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		952528B11F8B5CB600054309 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				952528B21F8B5CB600054309 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9564ED001F7E800A00B0FB87 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +113,7 @@
 				957A76D31F7BD739005D32ED /* ButtonComponent.swift */,
 				957A76D41F7BD739005D32ED /* VideoPreviewViewComponent.swift */,
 				957A76D51F7BD739005D32ED /* Appearance.swift */,
+				952528B41F8B9EA100054309 /* VideoViewComponent.swift */,
 			);
 			name = view;
 			path = Conference/view;
@@ -199,6 +213,7 @@
 				9564ED001F7E800A00B0FB87 /* Tests */,
 				956F34701F83D7BB00D5A02E /* Conference.app */,
 				956F34711F83D7BB00D5A02E /* Tests.xctest */,
+				952528B11F8B5CB600054309 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -326,6 +341,7 @@
 				95FE8C5C1F8A4DB4002556EA /* RandomNumberGenerator.swift in Sources */,
 				957A76E81F7BD73A005D32ED /* VideoPreviewViewComponent.swift in Sources */,
 				958CD4581F82292100D453C8 /* MouseEventMonitor.swift in Sources */,
+				952528B51F8B9EA100054309 /* VideoViewComponent.swift in Sources */,
 				957A76EA1F7BD73A005D32ED /* ApplicationManager.swift in Sources */,
 				957A76F31F7BD73A005D32ED /* VideoSessionController.swift in Sources */,
 				957A76E71F7BD73A005D32ED /* ButtonComponent.swift in Sources */,

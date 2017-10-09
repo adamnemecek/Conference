@@ -1,20 +1,23 @@
 
 import AppKit
+import AVFoundation
 
 class VideoSessionController {
   
   let animationTime: TimeInterval
   let videoSession: VideoSession
-  let previewViewComponent: VideoPreviewViewComponent
+  let videoPreviewViewComponent: VideoPreviewViewComponent
+  let videoViewComponent: VideoViewComponent
   
   var contentView: NSView {
-    return previewViewComponent.view
+    return videoPreviewViewComponent.view
   }
   
   init() {
     animationTime = 1
     videoSession = VideoSession()
-    previewViewComponent = VideoPreviewViewComponent(layer: videoSession.previewLayer)
+    videoPreviewViewComponent = VideoPreviewViewComponent(layer: videoSession.previewLayer)
+    videoViewComponent = VideoViewComponent()
     videoSession.delegate = self
     NSView.hide(views: contentView)
   }
@@ -35,7 +38,7 @@ extension VideoSessionController: VideoSessionDelegate {
     NSView.show(views: contentView, duration: animationTime)
   }
   
-  func videoSession(_ session: VideoSession, didReceiveBuffer buffer: Data) {
+  func videoSession(_ session: VideoSession, didReceiveBuffer buffer: [UInt8]) {
     
   }
   
