@@ -35,7 +35,7 @@ class VideoSession: NSObject {
     output.videoSettings = [
       AVVideoCodecKey: AVVideoCodecType.h264,
       AVVideoCompressionPropertiesKey: [
-        AVVideoAverageBitRateKey: 512000
+        AVVideoAverageBitRateKey: 2048000
       ]
     ]
     output.setSampleBufferDelegate(self, queue: serialQueue)
