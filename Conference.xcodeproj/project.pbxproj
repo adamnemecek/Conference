@@ -191,17 +191,9 @@
 			path = Conference/event;
 			sourceTree = "<group>";
 		};
-		9596D2971F87C2EC0069E4C1 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
 		95DA38161F5722C100A1B9F0 = {
 			isa = PBXGroup;
 			children = (
-				9596D2971F87C2EC0069E4C1 /* model */,
 				958CD4561F82292100D453C8 /* event */,
 				958CD4511F8228A800D453C8 /* crypto */,
 				957A76E11F7BD73A005D32ED /* controller */,

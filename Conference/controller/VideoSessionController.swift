@@ -10,7 +10,7 @@ class VideoSessionController {
   let videoViewComponent: VideoViewComponent
   
   var contentView: NSView {
-    return videoPreviewViewComponent.view
+    return videoViewComponent.view
   }
   
   init() {
@@ -38,8 +38,8 @@ extension VideoSessionController: VideoSessionDelegate {
     NSView.show(views: contentView, duration: animationTime)
   }
   
-  func videoSession(_ session: VideoSession, didReceiveBuffer buffer: [UInt8]) {
-    
+  func videoSession(_ session: VideoSession, didReceiveBuffer buffer: CMSampleBuffer) {
+    videoViewComponent.displayLayer.enqueue(buffer)
   }
   
 }

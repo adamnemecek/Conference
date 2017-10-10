@@ -7,7 +7,7 @@ protocol VideoSessionDelegate: class {
   func didStart(session: VideoSession)
   func didStop(session: VideoSession)
   func didFail(session: VideoSession)
-  func videoSession(_ session: VideoSession, didReceiveBuffer buffer: [UInt8])
+  func videoSession(_ session: VideoSession, didReceiveBuffer buffer: CMSampleBuffer)
   
 }
 
@@ -17,8 +17,8 @@ class VideoSession: NSObject {
   let camera: AVCaptureDevice
   let input: AVCaptureDeviceInput
   let output: AVCaptureVideoDataOutput
-  let serialQueue: DispatchQueue
   let previewLayer: AVCaptureVideoPreviewLayer
+  let serialQueue: DispatchQueue
   
   weak var delegate: VideoSessionDelegate?
   
@@ -27,15 +27,15 @@ class VideoSession: NSObject {
     camera = AVCaptureDevice.default(for: .video)!
     input = try! AVCaptureDeviceInput(device: camera)
     output = AVCaptureVideoDataOutput()
-    serialQueue = DispatchQueue(label: "CameraBufferQueue")
     previewLayer = AVCaptureVideoPreviewLayer(session: session)
+    serialQueue = DispatchQueue(label: "CameraBufferQueue")
     super.init()
     session.addInput(input)
     session.addOutput(output)
     output.videoSettings = [
-      AVVideoCodecKey: AVVideoCodecType.hevc,
+      AVVideoCodecKey: AVVideoCodecType.h264,
       AVVideoCompressionPropertiesKey: [
-        AVVideoAverageBitRateKey: 256000
+        AVVideoAverageBitRateKey: 512000
       ]
     ]
     output.setSampleBufferDelegate(self, queue: serialQueue)
@@ -67,7 +67,11 @@ class VideoSession: NSObject {
 extension VideoSession: AVCaptureVideoDataOutputSampleBufferDelegate {
   
   func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-    
+    delegate?.videoSession(self, didReceiveBuffer: sampleBuffer)
+  }
+  
+  func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    print("drop")
   }
   
 }
