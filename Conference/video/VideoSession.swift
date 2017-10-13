@@ -35,7 +35,7 @@ class VideoSession: NSObject {
     output.videoSettings = [
       AVVideoCodecKey: AVVideoCodecType.h264,
       AVVideoCompressionPropertiesKey: [
-        AVVideoAverageBitRateKey: 2048000
+        AVVideoAverageBitRateKey: 256000
       ]
     ]
     output.setSampleBufferDelegate(self, queue: serialQueue)
@@ -68,10 +68,6 @@ extension VideoSession: AVCaptureVideoDataOutputSampleBufferDelegate {
   
   func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
     delegate?.videoSession(self, didReceiveBuffer: sampleBuffer)
-  }
-  
-  func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-    print("drop")
   }
   
 }

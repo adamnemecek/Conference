@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		952528B31F8B5CB600054309 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952528B21F8B5CB600054309 /* AVFoundation.framework */; };
 		952528B51F8B9EA100054309 /* VideoViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952528B41F8B9EA100054309 /* VideoViewComponent.swift */; };
-		9564ED021F7E800A00B0FB87 /* UdpSocketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564ED011F7E800A00B0FB87 /* UdpSocketTest.swift */; };
-		9564ED091F7E815F00B0FB87 /* UdpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76F81F7BD7FF005D32ED /* UdpSocket.swift */; };
+		9578E4731F911BA5004EF881 /* Aes256InitializationVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578E4721F911BA5004EF881 /* Aes256InitializationVector.swift */; };
+		9578E4751F911BEF004EF881 /* Aes256Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578E4741F911BEF004EF881 /* Aes256Key.swift */; };
 		957A76E61F7BD73A005D32ED /* TextInputViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */; };
 		957A76E71F7BD73A005D32ED /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D31F7BD739005D32ED /* ButtonComponent.swift */; };
 		957A76E81F7BD73A005D32ED /* VideoPreviewViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D41F7BD739005D32ED /* VideoPreviewViewComponent.swift */; };
@@ -31,23 +30,11 @@
 		95FE8C5C1F8A4DB4002556EA /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE8C5B1F8A4DB4002556EA /* RandomNumberGenerator.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		9564ED041F7E800A00B0FB87 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95DA38171F5722C100A1B9F0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95DA381E1F5722C100A1B9F0;
-			remoteInfo = Conference;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		952528B21F8B5CB600054309 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		952528B41F8B9EA100054309 /* VideoViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewComponent.swift; sourceTree = "<group>"; };
-		9564ED011F7E800A00B0FB87 /* UdpSocketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdpSocketTest.swift; sourceTree = "<group>"; };
-		9564ED031F7E800A00B0FB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956F34701F83D7BB00D5A02E /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		956F34711F83D7BB00D5A02E /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9578E4721F911BA5004EF881 /* Aes256InitializationVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aes256InitializationVector.swift; sourceTree = "<group>"; };
+		9578E4741F911BEF004EF881 /* Aes256Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aes256Key.swift; sourceTree = "<group>"; };
 		957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputViewComponent.swift; sourceTree = "<group>"; };
 		957A76D31F7BD739005D32ED /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		957A76D41F7BD739005D32ED /* VideoPreviewViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreviewViewComponent.swift; sourceTree = "<group>"; };
@@ -71,41 +58,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9564ECFC1F7E800A00B0FB87 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95DA381C1F5722C100A1B9F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				952528B31F8B5CB600054309 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		952528B11F8B5CB600054309 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				952528B21F8B5CB600054309 /* AVFoundation.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9564ED001F7E800A00B0FB87 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				9564ED031F7E800A00B0FB87 /* Info.plist */,
-				9564ED011F7E800A00B0FB87 /* UdpSocketTest.swift */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		957A76D11F7BD739005D32ED /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +136,10 @@
 		958CD4511F8228A800D453C8 /* crypto */ = {
 			isa = PBXGroup;
 			children = (
-				958CD4521F8228A800D453C8 /* Sha256.swift */,
 				958CD4531F8228A800D453C8 /* Aes256.swift */,
+				9578E4741F911BEF004EF881 /* Aes256Key.swift */,
+				9578E4721F911BA5004EF881 /* Aes256InitializationVector.swift */,
+				958CD4521F8228A800D453C8 /* Sha256.swift */,
 				95FE8C5B1F8A4DB4002556EA /* RandomNumberGenerator.swift */,
 			);
 			name = crypto;
@@ -202,34 +166,13 @@
 				957A76DF1F7BD73A005D32ED /* video */,
 				957A76D11F7BD739005D32ED /* view */,
 				957A76DA1F7BD73A005D32ED /* misc */,
-				9564ED001F7E800A00B0FB87 /* Tests */,
 				956F34701F83D7BB00D5A02E /* Conference.app */,
-				956F34711F83D7BB00D5A02E /* Tests.xctest */,
-				952528B11F8B5CB600054309 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9564ECFE1F7E800A00B0FB87 /* Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9564ED081F7E800A00B0FB87 /* Build configuration list for PBXNativeTarget "Tests" */;
-			buildPhases = (
-				9564ECFB1F7E800A00B0FB87 /* Sources */,
-				9564ECFC1F7E800A00B0FB87 /* Frameworks */,
-				9564ECFD1F7E800A00B0FB87 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9564ED051F7E800A00B0FB87 /* PBXTargetDependency */,
-			);
-			name = Tests;
-			productName = Tests;
-			productReference = 956F34711F83D7BB00D5A02E /* Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		95DA381E1F5722C100A1B9F0 /* Conference */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95DA382D1F5722C100A1B9F0 /* Build configuration list for PBXNativeTarget "Conference" */;
@@ -256,10 +199,6 @@
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				TargetAttributes = {
-					9564ECFE1F7E800A00B0FB87 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-					};
 					95DA381E1F5722C100A1B9F0 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
@@ -286,19 +225,11 @@
 			projectRoot = "";
 			targets = (
 				95DA381E1F5722C100A1B9F0 /* Conference */,
-				9564ECFE1F7E800A00B0FB87 /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9564ECFD1F7E800A00B0FB87 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95DA381D1F5722C100A1B9F0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,21 +240,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9564ECFB1F7E800A00B0FB87 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9564ED091F7E815F00B0FB87 /* UdpSocket.swift in Sources */,
-				9564ED021F7E800A00B0FB87 /* UdpSocketTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95DA381B1F5722C100A1B9F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				958CD4551F8228A800D453C8 /* Aes256.swift in Sources */,
 				958CD4541F8228A800D453C8 /* Sha256.swift in Sources */,
+				9578E4731F911BA5004EF881 /* Aes256InitializationVector.swift in Sources */,
 				957A76F01F7BD73A005D32ED /* VideoSession.swift in Sources */,
 				957A76EB1F7BD73A005D32ED /* MenuManager.swift in Sources */,
 				957A76FF1F7BD7FF005D32ED /* UdpSocket.swift in Sources */,
@@ -332,6 +255,7 @@
 				957A76F21F7BD73A005D32ED /* MainController.swift in Sources */,
 				95FE8C5C1F8A4DB4002556EA /* RandomNumberGenerator.swift in Sources */,
 				957A76E81F7BD73A005D32ED /* VideoPreviewViewComponent.swift in Sources */,
+				9578E4751F911BEF004EF881 /* Aes256Key.swift in Sources */,
 				958CD4581F82292100D453C8 /* MouseEventMonitor.swift in Sources */,
 				952528B51F8B9EA100054309 /* VideoViewComponent.swift in Sources */,
 				957A76EA1F7BD73A005D32ED /* ApplicationManager.swift in Sources */,
@@ -346,45 +270,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		9564ED051F7E800A00B0FB87 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95DA381E1F5722C100A1B9F0 /* Conference */;
-			targetProxy = 9564ED041F7E800A00B0FB87 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		9564ED061F7E800A00B0FB87 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.livelycode.Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		9564ED071F7E800A00B0FB87 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.livelycode.Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 		95DA382B1F5722C100A1B9F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -533,15 +419,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9564ED081F7E800A00B0FB87 /* Build configuration list for PBXNativeTarget "Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9564ED061F7E800A00B0FB87 /* Debug */,
-				9564ED071F7E800A00B0FB87 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		95DA381A1F5722C100A1B9F0 /* Build configuration list for PBXProject "Conference" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
