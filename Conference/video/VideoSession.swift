@@ -7,7 +7,7 @@ protocol VideoSessionDelegate: class {
   func didStart(session: VideoSession)
   func didStop(session: VideoSession)
   func didFail(session: VideoSession)
-  func videoSession(_ session: VideoSession, didReceiveBuffer buffer: CMSampleBuffer)
+  func videoSession(_ session: VideoSession, didReceive frame: VideoFrame)
   
 }
 
@@ -67,7 +67,10 @@ class VideoSession: NSObject {
 extension VideoSession: AVCaptureVideoDataOutputSampleBufferDelegate {
   
   func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-    delegate?.videoSession(self, didReceiveBuffer: sampleBuffer)
+    guard let videoFrame = VideoFrame(sampleBuffer: sampleBuffer) else {
+      return
+    }
+    delegate?.videoSession(self, didReceive: videoFrame)
   }
   
 }

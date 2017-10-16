@@ -26,6 +26,11 @@ class VideoSessionController {
 
 extension VideoSessionController: VideoSessionDelegate {
   
+  func videoSession(_ session: VideoSession, didReceive frame: VideoFrame) {
+    let sampleBuffer = frame.sampleBuffer()
+    videoViewComponent.displayLayer.enqueue(sampleBuffer)
+  }
+  
   func didFail(session: VideoSession) {
     NSView.hide(views: contentView, duration: animationTime)
   }
@@ -36,10 +41,6 @@ extension VideoSessionController: VideoSessionDelegate {
 
   func didStart(session: VideoSession) {
     NSView.show(views: contentView, duration: animationTime)
-  }
-  
-  func videoSession(_ session: VideoSession, didReceiveBuffer buffer: CMSampleBuffer) {
-    videoViewComponent.displayLayer.enqueue(buffer)
   }
   
 }
