@@ -16,5 +16,9 @@ class VideoViewComponent {
     displayLayer.videoGravity = .resizeAspectFill
   }
   
+  func enqueue(frameBuffer: [UInt8]) {
+    
+  }
+  
 }
 

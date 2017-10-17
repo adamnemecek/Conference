@@ -7,7 +7,7 @@ protocol VideoSessionDelegate: class {
   func didStart(session: VideoSession)
   func didStop(session: VideoSession)
   func didFail(session: VideoSession)
-  func videoSession(_ session: VideoSession, didReceive frame: VideoFrame)
+  func videoSession(_ session: VideoSession, didReceiveFrameBuffer buffer: [UInt8])
   
 }
 
@@ -32,12 +32,14 @@ class VideoSession: NSObject {
     super.init()
     session.addInput(input)
     session.addOutput(output)
+    
     output.videoSettings = [
       AVVideoCodecKey: AVVideoCodecType.h264,
       AVVideoCompressionPropertiesKey: [
-        AVVideoAverageBitRateKey: 256000
+        AVVideoAverageBitRateKey: 100000
       ]
     ]
+ 
     output.setSampleBufferDelegate(self, queue: serialQueue)
     NotificationCenter.default.addObserver(forName: .AVCaptureSessionDidStartRunning, object: session, queue: nil) { notification in
       self.delegate?.didStart(session: self)
@@ -67,10 +69,7 @@ class VideoSession: NSObject {
 extension VideoSession: AVCaptureVideoDataOutputSampleBufferDelegate {
   
   func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-    guard let videoFrame = VideoFrame(sampleBuffer: sampleBuffer) else {
-      return
-    }
-    delegate?.videoSession(self, didReceive: videoFrame)
+ 
   }
   
 }

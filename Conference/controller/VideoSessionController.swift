@@ -26,9 +26,8 @@ class VideoSessionController {
 
 extension VideoSessionController: VideoSessionDelegate {
   
-  func videoSession(_ session: VideoSession, didReceive frame: VideoFrame) {
-    let sampleBuffer = frame.sampleBuffer()
-    videoViewComponent.displayLayer.enqueue(sampleBuffer)
+  func videoSession(_ session: VideoSession, didReceiveFrameBuffer buffer: [UInt8]) {
+    videoViewComponent.enqueue(frameBuffer: buffer)
   }
   
   func didFail(session: VideoSession) {
