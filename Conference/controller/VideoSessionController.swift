@@ -26,7 +26,7 @@ class VideoSessionController {
 
 extension VideoSessionController: VideoSessionDelegate {
   
-  func videoSession(_ session: VideoSession, didReceiveFrameBuffer buffer: [UInt8]) {
+  func videoSession(_ session: VideoSession, didReceiveFrameBuffer buffer: Data) {
     videoViewComponent.enqueue(frameBuffer: buffer)
   }
   

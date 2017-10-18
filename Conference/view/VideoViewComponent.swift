@@ -16,7 +16,10 @@ class VideoViewComponent {
     displayLayer.videoGravity = .resizeAspectFill
   }
   
-  func enqueue(frameBuffer: [UInt8]) {
+  func enqueue(frameBuffer: Data) {
+    guard let sampleBuffer = VideoFrameDecodeBinary(data: frameBuffer) else {
+      return
+    }
     
   }
   
