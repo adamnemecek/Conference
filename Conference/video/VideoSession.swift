@@ -17,6 +17,7 @@ class VideoSession: NSObject {
   let camera: AVCaptureDevice
   let input: AVCaptureDeviceInput
   let output: AVCaptureVideoDataOutput
+  let encoder: VideoEncoder
   let previewLayer: AVCaptureVideoPreviewLayer
   let serialQueue: DispatchQueue
   
@@ -27,6 +28,7 @@ class VideoSession: NSObject {
     camera = AVCaptureDevice.default(for: .video)!
     input = try! AVCaptureDeviceInput(device: camera)
     output = AVCaptureVideoDataOutput()
+    encoder = VideoEncoder(width: 1920, height: 1080)
     previewLayer = AVCaptureVideoPreviewLayer(session: session)
     serialQueue = DispatchQueue(label: "CameraBufferQueue")
     super.init()
@@ -61,10 +63,14 @@ class VideoSession: NSObject {
 extension VideoSession: AVCaptureVideoDataOutputSampleBufferDelegate {
   
   func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-    guard let data = VideoFrameEncodeBinary(sampleBuffer: sampleBuffer) else {
-      return
+    encoder.encode(sampleBuffer: sampleBuffer) { sampleBuffer in
+      guard let data = VideoFrameEncodeBinary(sampleBuffer: sampleBuffer) else {
+        return
+      }
+      DispatchQueue.main.async {
+        self.delegate?.videoSession(self, didReceiveFrameBuffer: data)
+      }
     }
-    delegate?.videoSession(self, didReceiveFrameBuffer: data)
   }
   
 }
