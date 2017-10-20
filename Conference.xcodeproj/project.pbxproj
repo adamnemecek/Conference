@@ -24,10 +24,11 @@
 		957A76F31F7BD73A005D32ED /* VideoSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E41F7BD73A005D32ED /* VideoSessionController.swift */; };
 		957A76F41F7BD73A005D32ED /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76E51F7BD73A005D32ED /* ConnectionController.swift */; };
 		957A76FF1F7BD7FF005D32ED /* UdpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76F81F7BD7FF005D32ED /* UdpSocket.swift */; };
+		957BABB31F98E77F00F6B383 /* VideoEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957BABB21F98E77F00F6B383 /* VideoEncoder.swift */; };
 		958CD4541F8228A800D453C8 /* Sha256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CD4521F8228A800D453C8 /* Sha256.swift */; };
 		958CD4551F8228A800D453C8 /* Aes256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CD4531F8228A800D453C8 /* Aes256.swift */; };
 		958CD4581F82292100D453C8 /* MouseEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CD4571F82292100D453C8 /* MouseEventMonitor.swift */; };
-		9598F6991F937457009080B9 /* VideoFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598F6981F937457009080B9 /* VideoFrame.swift */; };
+		9598F6991F937457009080B9 /* VideoFrameCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598F6981F937457009080B9 /* VideoFrameCoder.swift */; };
 		95FE8C5C1F8A4DB4002556EA /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE8C5B1F8A4DB4002556EA /* RandomNumberGenerator.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,11 +52,12 @@
 		957A76E41F7BD73A005D32ED /* VideoSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSessionController.swift; sourceTree = "<group>"; };
 		957A76E51F7BD73A005D32ED /* ConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
 		957A76F81F7BD7FF005D32ED /* UdpSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdpSocket.swift; sourceTree = "<group>"; };
+		957BABB21F98E77F00F6B383 /* VideoEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEncoder.swift; sourceTree = "<group>"; };
 		958CD4521F8228A800D453C8 /* Sha256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sha256.swift; sourceTree = "<group>"; };
 		958CD4531F8228A800D453C8 /* Aes256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aes256.swift; sourceTree = "<group>"; };
 		958CD4571F82292100D453C8 /* MouseEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEventMonitor.swift; sourceTree = "<group>"; };
 		958CD4591F82293500D453C8 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		9598F6981F937457009080B9 /* VideoFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFrame.swift; sourceTree = "<group>"; };
+		9598F6981F937457009080B9 /* VideoFrameCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFrameCoder.swift; sourceTree = "<group>"; };
 		95FE8C5B1F8A4DB4002556EA /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +119,8 @@
 		957A76DF1F7BD73A005D32ED /* video */ = {
 			isa = PBXGroup;
 			children = (
-				9598F6981F937457009080B9 /* VideoFrame.swift */,
+				957BABB21F98E77F00F6B383 /* VideoEncoder.swift */,
+				9598F6981F937457009080B9 /* VideoFrameCoder.swift */,
 				957A76E01F7BD73A005D32ED /* VideoSession.swift */,
 			);
 			name = video;
@@ -259,13 +262,14 @@
 				958CD4551F8228A800D453C8 /* Aes256.swift in Sources */,
 				958CD4541F8228A800D453C8 /* Sha256.swift in Sources */,
 				9578E4731F911BA5004EF881 /* Aes256InitializationVector.swift in Sources */,
+				957BABB31F98E77F00F6B383 /* VideoEncoder.swift in Sources */,
 				957A76F01F7BD73A005D32ED /* VideoSession.swift in Sources */,
 				957A76EB1F7BD73A005D32ED /* MenuManager.swift in Sources */,
 				957A76FF1F7BD7FF005D32ED /* UdpSocket.swift in Sources */,
 				957A76E61F7BD73A005D32ED /* TextInputViewComponent.swift in Sources */,
 				957A76EE1F7BD73A005D32ED /* main.swift in Sources */,
 				957A76F21F7BD73A005D32ED /* MainController.swift in Sources */,
-				9598F6991F937457009080B9 /* VideoFrame.swift in Sources */,
+				9598F6991F937457009080B9 /* VideoFrameCoder.swift in Sources */,
 				95FE8C5C1F8A4DB4002556EA /* RandomNumberGenerator.swift in Sources */,
 				957A76E81F7BD73A005D32ED /* VideoPreviewViewComponent.swift in Sources */,
 				9578E4751F911BEF004EF881 /* Aes256Key.swift in Sources */,

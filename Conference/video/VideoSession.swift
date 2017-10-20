@@ -32,14 +32,6 @@ class VideoSession: NSObject {
     super.init()
     session.addInput(input)
     session.addOutput(output)
-    
-    output.videoSettings = [
-      AVVideoCodecKey: AVVideoCodecType.h264,
-      AVVideoCompressionPropertiesKey: [
-        AVVideoAverageBitRateKey: 100000
-      ]
-    ]
- 
     output.setSampleBufferDelegate(self, queue: serialQueue)
     NotificationCenter.default.addObserver(forName: .AVCaptureSessionDidStartRunning, object: session, queue: nil) { notification in
       self.delegate?.didStart(session: self)

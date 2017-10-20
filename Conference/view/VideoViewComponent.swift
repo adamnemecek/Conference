@@ -20,7 +20,7 @@ class VideoViewComponent {
     guard let sampleBuffer = VideoFrameDecodeBinary(data: frameBuffer) else {
       return
     }
-    
+    displayLayer.enqueue(sampleBuffer)
   }
   
 }
