@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9511448B1F9DD07D00F9FCFF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511448A1F9DD07D00F9FCFF /* Utils.swift */; };
 		952528B51F8B9EA100054309 /* VideoViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952528B41F8B9EA100054309 /* VideoViewComponent.swift */; };
 		9578E4731F911BA5004EF881 /* Aes256InitializationVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578E4721F911BA5004EF881 /* Aes256InitializationVector.swift */; };
 		9578E4751F911BEF004EF881 /* Aes256Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578E4741F911BEF004EF881 /* Aes256Key.swift */; };
@@ -33,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9511448A1F9DD07D00F9FCFF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9514457F1F9FAFB900C16C65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		951445811F9FB09900C16C65 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		952528B41F8B9EA100054309 /* VideoViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewComponent.swift; sourceTree = "<group>"; };
 		956F34701F83D7BB00D5A02E /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9578E4721F911BA5004EF881 /* Aes256InitializationVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aes256InitializationVector.swift; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9514457E1F9FAFB800C16C65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				951445811F9FB09900C16C65 /* CoreVideo.framework */,
+				9514457F1F9FAFB900C16C65 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		957A76D11F7BD739005D32ED /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 				957A76DC1F7BD73A005D32ED /* Extension.swift */,
 				957A76DD1F7BD73A005D32ED /* main.swift */,
 				957A76DE1F7BD73A005D32ED /* Info.plist */,
+				9511448A1F9DD07D00F9FCFF /* Utils.swift */,
 			);
 			name = misc;
 			path = Conference/misc;
@@ -182,6 +196,7 @@
 				957A76D11F7BD739005D32ED /* view */,
 				957A76DA1F7BD73A005D32ED /* misc */,
 				956F34701F83D7BB00D5A02E /* Conference.app */,
+				9514457E1F9FAFB800C16C65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,6 +297,7 @@
 				957A76F41F7BD73A005D32ED /* ConnectionController.swift in Sources */,
 				957A76F11F7BD73A005D32ED /* ContainerController.swift in Sources */,
 				957A76ED1F7BD73A005D32ED /* Extension.swift in Sources */,
+				9511448B1F9DD07D00F9FCFF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
