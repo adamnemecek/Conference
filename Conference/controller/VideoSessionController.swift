@@ -6,20 +6,20 @@ class VideoSessionController {
   
   let animationTime: TimeInterval
   let videoSession: VideoSession
-  let videoPreviewViewComponent: VideoPreviewViewComponent
-  let videoViewComponent: VideoViewComponent
+  let videoPreviewView: VideoPreviewView
+  let videoView: VideoView
   
-  var contentView: NSView {
-    return videoViewComponent.view
+  var view: NSView {
+    return videoView
   }
   
   init() {
     animationTime = 1
     videoSession = VideoSession()
-    videoPreviewViewComponent = VideoPreviewViewComponent(layer: videoSession.previewLayer)
-    videoViewComponent = VideoViewComponent()
+    videoPreviewView = VideoPreviewView(previewLayer: videoSession.previewLayer)
+    videoView = VideoView()
     videoSession.delegate = self
-    NSView.hide(views: contentView)
+    NSView.hide(views: view)
   }
   
 }
@@ -27,19 +27,19 @@ class VideoSessionController {
 extension VideoSessionController: VideoSessionDelegate {
   
   func videoSession(_ session: VideoSession, didReceiveFrameBuffer buffer: Data) {
-    videoViewComponent.enqueue(frameBuffer: buffer)
+    videoView.enqueue(frameBuffer: buffer)
   }
   
   func didFail(session: VideoSession) {
-    NSView.hide(views: contentView, duration: animationTime)
+    NSView.hide(views: view, duration: animationTime)
   }
 
   func didStop(session: VideoSession) {
-    NSView.hide(views: contentView, duration: animationTime)
+    NSView.hide(views: view, duration: animationTime)
   }
 
   func didStart(session: VideoSession) {
-    NSView.show(views: contentView, duration: animationTime)
+    NSView.show(views: view, duration: animationTime)
   }
   
 }
