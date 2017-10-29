@@ -3,23 +3,35 @@ import AppKit
 
 class ContainerController {
   
-  let contentView: NSView
+  let view: NSView
   var childView: NSView?
   
   init() {
-    contentView = NSView()
-    contentView.translatesAutoresizingMaskIntoConstraints = false
+    view = NSView()
+    view.translatesAutoresizingMaskIntoConstraints = false
   }
   
-  func present(view: NSView) {
+  func present(contentView: NSView, transition: Transition) {
     childView?.removeFromSuperview()
     childView?.removeConstraints()
-    contentView.addSubview(view)
-    view.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-    view.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-    view.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-    view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+    view.addSubview(contentView)
+    contentView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+    contentView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+    contentView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     childView = view
+  }
+  
+}
+
+extension ContainerController {
+  
+  enum Transition {
+  
+    case none
+    case forward
+    case backward
+    
   }
   
 }

@@ -9,31 +9,27 @@ protocol ConnectionControllerDelegate: class {
 
 class ConnectionController {
   
-  let contentView: NSView
-  let connectionInputViewComponent: TextInputViewComponent
-  let connectButtonComponent: ButtonComponent
+  let view: NSView
+  let connectionInput = TextInput()
+  let connectButton = Button()
   
   weak var delegate: ConnectionControllerDelegate?
   
   init() {
-    contentView = NSView()
-    connectionInputViewComponent = TextInputViewComponent()
-    connectButtonComponent = ButtonComponent(title: "Connect")
-    let inputView = connectionInputViewComponent.view
-    let connectButton = connectButtonComponent.view
-    contentView.addSubview(inputView)
-    contentView.addSubview(connectButton)
-    contentView.translatesAutoresizingMaskIntoConstraints = false
-    connectButtonComponent.onClick = {
+    view = NSView()
+    view.addSubview(connectionInput)
+    view.addSubview(connectButton)
+    view.translatesAutoresizingMaskIntoConstraints = false
+    connectButton.onClick = {
       self.delegate?.didConnect()
     }
-    inputView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
-    inputView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
-    inputView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40).isActive = true
-    inputView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    connectionInput.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+    connectionInput.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+    connectionInput.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+    connectionInput.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
-    connectButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-    connectButton.topAnchor.constraint(equalTo: inputView.bottomAnchor, constant: 20).isActive = true
+    connectButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    connectButton.topAnchor.constraint(equalTo: connectionInput.bottomAnchor, constant: 20).isActive = true
   }
   
 }

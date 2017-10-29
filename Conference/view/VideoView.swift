@@ -2,18 +2,21 @@
 import AppKit
 import AVFoundation
 
-class VideoViewComponent {
+class VideoView: NSView {
   
-  let view: NSView
   let displayLayer: AVSampleBufferDisplayLayer
   
   init() {
-    view = NSView()
     displayLayer = AVSampleBufferDisplayLayer()
-    view.translatesAutoresizingMaskIntoConstraints = false
-    view.layer = displayLayer
-    view.wantsLayer = true
+    super.init(frame: .zero)
+    translatesAutoresizingMaskIntoConstraints = false
+    layer = displayLayer
+    wantsLayer = true
     displayLayer.videoGravity = .resizeAspectFill
+  }
+  
+  required init?(coder decoder: NSCoder) {
+    fatalError()
   }
   
   func enqueue(frameBuffer: Data) {

@@ -3,20 +3,16 @@ import AppKit
 
 class MainController {
   
-  let window: NSWindow
-  let containerController: ContainerController
-  let connectionController: ConnectionController
-  let videoSessionController: VideoSessionController
-  let mouseEventMonitor: MouseEventMonitor
+  let window = MainControllerWindow()
+  let containerController = ContainerController()
+  let startController = StartController()
+  let connectionController = ConnectionController()
+  let videoSessionController = VideoSessionController()
+  let mouseEventMonitor = MouseEventMonitor()
   
   init() {
-    window = MainControllerWindow()
-    containerController = ContainerController()
-    connectionController = ConnectionController()
-    videoSessionController = VideoSessionController()
-    mouseEventMonitor = MouseEventMonitor()
-    window.contentView = containerController.contentView
-    containerController.present(view: connectionController.contentView)
+    window.contentView = containerController.view
+    containerController.present(contentView: connectionController.view, transition: .none)
     connectionController.delegate = self
     mouseEventMonitor.delegate = self    
   }
@@ -26,7 +22,7 @@ class MainController {
 extension MainController: ConnectionControllerDelegate {
   
   func didConnect() {
-    containerController.present(view: videoSessionController.contentView)
+    containerController.present(contentView: videoSessionController.view, transition: .none)
     videoSessionController.videoSession.start()
   }
   
