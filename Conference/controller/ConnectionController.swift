@@ -34,6 +34,10 @@ class ConnectionController {
 
     connectButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
     connectButton.topAnchor.constraint(equalTo: inputView.bottomAnchor, constant: 20).isActive = true
+    
+    PassPhraseGenerator(wordCount: 4) { passPhrase in
+      self.connectionInputViewComponent.inputField.stringValue = passPhrase
+    }
   }
   
 }

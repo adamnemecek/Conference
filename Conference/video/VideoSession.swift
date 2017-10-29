@@ -63,7 +63,9 @@ class VideoSession: NSObject {
 extension VideoSession: AVCaptureVideoDataOutputSampleBufferDelegate {
   
   func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    let past = Date()
     encoder.encode(sampleBuffer: sampleBuffer) { sampleBuffer in
+      PrintExecutionTime(past: past)
       guard let data = VideoFrameEncodeBinary(sampleBuffer: sampleBuffer) else {
         return
       }

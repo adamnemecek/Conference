@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9511448B1F9DD07D00F9FCFF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511448A1F9DD07D00F9FCFF /* Utils.swift */; };
+		951D865F1FA261BF00D241D8 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 951D865E1FA261BF00D241D8 /* words.txt */; };
 		952528B51F8B9EA100054309 /* VideoViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952528B41F8B9EA100054309 /* VideoViewComponent.swift */; };
+		9562386B1FA246E400920959 /* PassPhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562386A1FA246E400920959 /* PassPhrase.swift */; };
 		9578E4731F911BA5004EF881 /* Aes256InitializationVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578E4721F911BA5004EF881 /* Aes256InitializationVector.swift */; };
 		9578E4751F911BEF004EF881 /* Aes256Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578E4741F911BEF004EF881 /* Aes256Key.swift */; };
 		957A76E61F7BD73A005D32ED /* TextInputViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D21F7BD739005D32ED /* TextInputViewComponent.swift */; };
@@ -37,7 +39,9 @@
 		9511448A1F9DD07D00F9FCFF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9514457F1F9FAFB900C16C65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		951445811F9FB09900C16C65 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		951D865E1FA261BF00D241D8 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		952528B41F8B9EA100054309 /* VideoViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewComponent.swift; sourceTree = "<group>"; };
+		9562386A1FA246E400920959 /* PassPhrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassPhrase.swift; sourceTree = "<group>"; };
 		956F34701F83D7BB00D5A02E /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9578E4721F911BA5004EF881 /* Aes256InitializationVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aes256InitializationVector.swift; sourceTree = "<group>"; };
 		9578E4741F911BEF004EF881 /* Aes256Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aes256Key.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		957A76DA1F7BD73A005D32ED /* misc */ = {
 			isa = PBXGroup;
 			children = (
+				951D865E1FA261BF00D241D8 /* words.txt */,
 				958CD4591F82293500D453C8 /* BridgingHeader.h */,
 				957A76DC1F7BD73A005D32ED /* Extension.swift */,
 				957A76DD1F7BD73A005D32ED /* main.swift */,
@@ -178,6 +183,7 @@
 		9598F6951F913D28009080B9 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				9562386A1FA246E400920959 /* PassPhrase.swift */,
 			);
 			name = model;
 			path = Conference/model;
@@ -264,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951D865F1FA261BF00D241D8 /* words.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9562386B1FA246E400920959 /* PassPhrase.swift in Sources */,
 				958CD4551F8228A800D453C8 /* Aes256.swift in Sources */,
 				958CD4541F8228A800D453C8 /* Sha256.swift in Sources */,
 				9578E4731F911BA5004EF881 /* Aes256InitializationVector.swift in Sources */,

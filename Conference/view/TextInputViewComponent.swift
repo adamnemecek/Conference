@@ -15,7 +15,7 @@ class TextInputViewComponent {
     view.layer?.cornerRadius = 4
     view.addSubview(inputField)
     
-    inputField.font = NSFont.systemFont(ofSize: 32)
+    inputField.font = NSFont.systemFont(ofSize: 24)
     inputField.textColor = ColorText
     inputField.alignment = .center
     inputField.isBordered = false
