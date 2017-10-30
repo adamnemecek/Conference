@@ -1,5 +1,7 @@
 
 import AppKit
 
-let ColorTextBackground = NSColor(deviceWhite: 0.85, alpha: 1)
-let ColorText = NSColor(deviceWhite: 0.2, alpha: 1)
+let ColorTextBackground = NSColor(white: 200)
+let ColorText = NSColor(white: 80)
+let ColorBlue = NSColor(red: 16, green: 144, blue: 181)
+let ColorGreen = NSColor(red: 117, green: 192, blue: 73)

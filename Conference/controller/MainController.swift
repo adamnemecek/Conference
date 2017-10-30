@@ -12,9 +12,12 @@ class MainController {
   
   init() {
     window.contentView = containerController.view
-    containerController.present(contentView: connectionController.view, transition: .none)
+    containerController.present(viewController: startController, transition: .none)
     connectionController.delegate = self
-    mouseEventMonitor.delegate = self    
+    mouseEventMonitor.delegate = self
+    NotificationCenter.default.addObserver(forName: NSWindow.didResizeNotification, object: nil, queue: nil) { notification in
+      self.containerController.layoutSubviews()
+    }
   }
   
 }
@@ -22,7 +25,7 @@ class MainController {
 extension MainController: ConnectionControllerDelegate {
   
   func didConnect() {
-    containerController.present(contentView: videoSessionController.view, transition: .none)
+    containerController.present(viewController: videoSessionController, transition: .none)
     videoSessionController.videoSession.start()
   }
   
@@ -49,7 +52,6 @@ func MainControllerWindow() -> NSWindow {
   let styleMask = [
     .titled,
     .fullSizeContentView,
-    .closable,
     .miniaturizable,
     .resizable
   ] as NSWindow.StyleMask

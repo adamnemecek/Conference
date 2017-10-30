@@ -27,5 +27,5 @@ class TextInput: NSView {
   required init?(coder decoder: NSCoder) {
     fatalError()
   }
-  
+    
 }

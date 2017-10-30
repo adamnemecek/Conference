@@ -43,3 +43,11 @@ extension VideoSessionController: VideoSessionDelegate {
   }
   
 }
+
+extension VideoSessionController: ViewController {
+  
+  func layoutSubviews() {
+    
+  }
+  
+}

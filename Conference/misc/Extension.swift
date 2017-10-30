@@ -1,6 +1,24 @@
 
 import AppKit
 
+extension NSColor {
+  
+  convenience init(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8 = UInt8.max) {
+    let r = CGFloat(red) / CGFloat(UInt8.max)
+    let g = CGFloat(green) / CGFloat(UInt8.max)
+    let b = CGFloat(blue) / CGFloat(UInt8.max)
+    let a = CGFloat(alpha) / CGFloat(UInt8.max)
+    self.init(deviceRed: r, green: g, blue: b, alpha: a)
+  }
+  
+  convenience init(white: UInt8, alpha: UInt8 = UInt8.max) {
+    let w = CGFloat(white) / CGFloat(UInt8.max)
+    let a = CGFloat(alpha) / CGFloat(UInt8.max)
+    self.init(white: w, alpha: a)
+  }
+  
+}
+
 extension NSMenu {
   
   func addItem(title: String, keyEquivalent: String? = nil, modifierMask: NSEvent.ModifierFlags = [], target: AnyObject, action: Selector) {
@@ -31,6 +49,11 @@ extension NSMenu {
 }
 
 extension NSView {
+  
+  func setPosition(x: Double, y: Double) {
+    let origin = CGPoint(x: x, y: y)
+    frame = CGRect(origin: origin, size: intrinsicContentSize)
+  }
   
   func removeSubviews() {
     for view in subviews {

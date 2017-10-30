@@ -28,7 +28,7 @@ class VideoSession: NSObject {
     camera = AVCaptureDevice.default(for: .video)!
     input = try! AVCaptureDeviceInput(device: camera)
     output = AVCaptureVideoDataOutput()
-    encoder = VideoEncoder(width: 200, height: 200)
+    encoder = VideoEncoder(width: 512, height: 512)
     previewLayer = AVCaptureVideoPreviewLayer(session: session)
     serialQueue = DispatchQueue(label: "CameraBufferQueue")
     super.init()
