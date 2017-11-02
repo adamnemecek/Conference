@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9511448B1F9DD07D00F9FCFF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511448A1F9DD07D00F9FCFF /* Utils.swift */; };
 		952528B51F8B9EA100054309 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952528B41F8B9EA100054309 /* VideoView.swift */; };
+		9539D2911FAB9A3F006F8D66 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539D2901FAB9A3F006F8D66 /* Component.swift */; };
 		9554BBAC1FA5B6C700DAE7D1 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554BBAB1FA5B6C700DAE7D1 /* StartController.swift */; };
 		9554BBAE1FA5B74000DAE7D1 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554BBAD1FA5B74000DAE7D1 /* TextButton.swift */; };
 		957A76E61F7BD73A005D32ED /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A76D21F7BD739005D32ED /* TextInput.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		9511448A1F9DD07D00F9FCFF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		952528B41F8B9EA100054309 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		9539D2901FAB9A3F006F8D66 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		9554BBAB1FA5B6C700DAE7D1 /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
 		9554BBAD1FA5B74000DAE7D1 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		956F34701F83D7BB00D5A02E /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				95C48DB61FA61BA400C55694 /* words.txt */,
+				9539D2901FAB9A3F006F8D66 /* Component.swift */,
 				957A76D51F7BD739005D32ED /* Appearance.swift */,
 				957A76DC1F7BD73A005D32ED /* Extension.swift */,
 				9511448A1F9DD07D00F9FCFF /* Utils.swift */,
@@ -288,6 +291,7 @@
 				958CD4581F82292100D453C8 /* MouseEventMonitor.swift in Sources */,
 				952528B51F8B9EA100054309 /* VideoView.swift in Sources */,
 				957A76EA1F7BD73A005D32ED /* ApplicationManager.swift in Sources */,
+				9539D2911FAB9A3F006F8D66 /* Component.swift in Sources */,
 				957A76F31F7BD73A005D32ED /* VideoSessionController.swift in Sources */,
 				957A76E91F7BD73A005D32ED /* Appearance.swift in Sources */,
 				957A76F41F7BD73A005D32ED /* ConnectionController.swift in Sources */,

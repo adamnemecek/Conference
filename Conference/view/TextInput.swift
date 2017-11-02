@@ -9,7 +9,7 @@ class TextInput: NSView {
     super.init(frame: .zero)
     wantsLayer = true
     layer?.backgroundColor = ColorTextBackground.cgColor
-    layer?.cornerRadius = 4
+    layer?.cornerRadius = 2
     addSubview(inputField)
     
     inputField.font = NSFont.systemFont(ofSize: 32)

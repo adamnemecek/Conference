@@ -1,6 +1,16 @@
 
 import AppKit
 
+extension CGSize {
+  
+  func inset(horizontal: CGFloat, vertical: CGFloat) -> CGSize {
+    let width = horizontal + self.width + horizontal
+    let height = vertical + self.height + vertical
+    return CGSize(width: width, height: height)
+  }
+  
+}
+
 extension NSColor {
   
   convenience init(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8 = UInt8.max) {
