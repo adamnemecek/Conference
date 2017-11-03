@@ -10,6 +10,9 @@ class StartController {
   init() {
     view.addSubview(createChannelButton)
     view.addSubview(joinChannelButton)
+    
+    createChannelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+    createChannelButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 10)
   }
   
 }
@@ -17,8 +20,7 @@ class StartController {
 extension StartController: ViewController {
   
   func layoutSubviews() {
-    createChannelButton.setPosition(x: 100, y: 200)
-    joinChannelButton.setPosition(x: 100, y: 250)
+    
   }
   
 }

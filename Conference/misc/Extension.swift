@@ -59,12 +59,7 @@ extension NSMenu {
 }
 
 extension NSView {
-  
-  func setPosition(x: Double, y: Double) {
-    let origin = CGPoint(x: x, y: y)
-    frame = CGRect(origin: origin, size: intrinsicContentSize)
-  }
-  
+    
   func removeSubviews() {
     for view in subviews {
       view.removeFromSuperview()
