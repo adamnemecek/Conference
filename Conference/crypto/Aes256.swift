@@ -8,7 +8,7 @@ struct Aes256Key {
     let hashAlgorithm = CCPseudoRandomAlgorithm(kCCPRFHmacAlgSHA256)
     let rounds = UInt32(8192)
     var key = [UInt8](repeating: 0, count: kCCKeySizeAES128)
-    CCKeyDerivationPBKDF(pbkdfAlgorithm, password, password.characters.count, salt, salt.count, hashAlgorithm, rounds, &key, kCCKeySizeAES128)
+    CCKeyDerivationPBKDF(pbkdfAlgorithm, password, password.count, salt, salt.count, hashAlgorithm, rounds, &key, kCCKeySizeAES128)
     bytes = key
   }
   

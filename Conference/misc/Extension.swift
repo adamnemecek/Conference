@@ -1,6 +1,37 @@
 
 import AppKit
 
+extension NSStackView {
+  
+  convenience init(views: NSView...) {
+    self.init(views: views)
+  }
+  
+}
+
+extension CALayer {
+  
+
+  var movedAnchorPoint: CGPoint {
+    get {
+      return anchorPoint
+    }
+    set(value) {
+      CATransaction.begin()
+      CATransaction.setDisableActions(true)
+      let newPoint = CGPoint(x: bounds.size.width * value.x, y: bounds.size.height * value.y)
+      let oldPoint = CGPoint(x: bounds.size.width * anchorPoint.x, y: bounds.size.height * anchorPoint.y)
+      position.x -= oldPoint.x
+      position.x += newPoint.x
+      position.y -= oldPoint.y
+      position.y += newPoint.y
+      anchorPoint = value
+      CATransaction.commit()
+    }
+  }
+  
+}
+
 extension CGSize {
   
   func inset(horizontal: CGFloat, vertical: CGFloat) -> CGSize {
@@ -59,7 +90,13 @@ extension NSMenu {
 }
 
 extension NSView {
-    
+  
+  func removeTrackingAreas() {
+    for area in trackingAreas {
+      removeTrackingArea(area)
+    }
+  }
+  
   func removeSubviews() {
     for view in subviews {
       view.removeFromSuperview()

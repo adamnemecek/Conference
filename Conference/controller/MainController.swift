@@ -5,19 +5,16 @@ class MainController {
   
   let window = MainControllerWindow()
   let containerController = ContainerController()
-  let startController = StartController()
+  let startController = StartViewController()
   let connectionController = ConnectionController()
   let videoSessionController = VideoSessionController()
   let mouseEventMonitor = MouseEventMonitor()
   
   init() {
-    window.contentView = containerController.view
-    containerController.present(viewController: startController, transition: .none)
+    window.contentView = containerController.contentView
+    containerController.present(view: startController.view, transition: .none)
     connectionController.delegate = self
     mouseEventMonitor.delegate = self
-    NotificationCenter.default.addObserver(forName: NSWindow.didResizeNotification, object: nil, queue: nil) { notification in
-      self.containerController.layoutSubviews()
-    }
   }
   
 }
@@ -25,7 +22,7 @@ class MainController {
 extension MainController: ConnectionControllerDelegate {
   
   func didConnect() {
-    containerController.present(viewController: videoSessionController, transition: .none)
+    containerController.present(view: videoSessionController.view, transition: .none)
     videoSessionController.videoSession.start()
   }
   

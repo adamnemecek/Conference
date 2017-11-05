@@ -37,11 +37,3 @@ class ConnectionController {
   }
   
 }
-
-extension ConnectionController: ViewController {
-  
-  func layoutSubviews() {
-    
-  }
-  
-}

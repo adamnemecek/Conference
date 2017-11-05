@@ -3,29 +3,16 @@ import AppKit
 
 class ContainerController {
   
-  let view: NSView
-  var currentController: ViewController?
+  let contentView = NSView()
   
-  init() {
-    view = NSView()
+  func present(view: NSView, transition: Transition) {
+    contentView.addSubview(view)
+    
     view.translatesAutoresizingMaskIntoConstraints = false
-  }
-  
-  func present(viewController: ViewController, transition: Transition) {
-    currentController?.view.removeFromSuperview()
-    view.addSubview(viewController.view)
-    viewController.view.frame = view.bounds
-    viewController.layoutSubviews()
-    currentController = viewController
-  }
-  
-}
-
-extension ContainerController: ViewController {
-  
-  func layoutSubviews() {
-    currentController?.view.frame = view.bounds
-    currentController?.layoutSubviews()
+    view.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+    view.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+    view.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+    view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
   }
   
 }
