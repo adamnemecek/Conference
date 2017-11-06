@@ -1,9 +1,11 @@
 
 import AppKit
 
-class ContainerController {
+class NavigationController {
   
   let contentView = NSView()
+  
+  
   
   func present(view: NSView, transition: Transition) {
     contentView.addSubview(view)
@@ -17,7 +19,7 @@ class ContainerController {
   
 }
 
-extension ContainerController {
+extension NavigationController {
   
   enum Transition {
   
