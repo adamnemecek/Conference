@@ -10,6 +10,7 @@ class TextButton: NSView {
   var onClick: (() -> Void)?
   
   private let titleLayer = CATextLayer()
+  private var trackingArea = NSTrackingArea()
   
   init(title: String, color: NSColor) {
     super.init(frame: .zero)
@@ -37,12 +38,16 @@ class TextButton: NSView {
   required init?(coder decoder: NSCoder) {
     fatalError()
   }
-  
+
+  override var intrinsicContentSize: NSSize {
+    let width = 12 + titleLayer.preferredFrameSize().width + 12
+    return NSSize(width: width, height: 44)
+  }
+
   override func mouseEntered(with event: NSEvent) {
     super.mouseEntered(with: event)
     layer?.movedAnchorPoint = CGPoint(x: 0.5, y: 0.5)
     layer?.transform = CATransform3DMakeScale(scaling, scaling, 1)
-    
   }
   
   override func mouseExited(with event: NSEvent) {
@@ -51,14 +56,19 @@ class TextButton: NSView {
     layer?.transform = CATransform3DMakeScale(1, 1, 1)
   }
   
+  override func mouseUp(with event: NSEvent) {
+    super.mouseUp(with: event)
+    onClick?()
+  }
+  
   override func updateTrackingAreas() {
-    removeTrackingAreas()
+    removeTrackingArea(trackingArea)
     let options = [
       .mouseEnteredAndExited,
       .activeAlways
     ] as NSTrackingArea.Options
-    let area = NSTrackingArea(rect: bounds, options: options, owner: self, userInfo: nil)
-    addTrackingArea(area)
+    trackingArea = NSTrackingArea(rect: bounds, options: options, owner: self, userInfo: nil)
+    addTrackingArea(trackingArea)
   }
   
 }

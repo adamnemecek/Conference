@@ -8,8 +8,6 @@ class ApplicationManager {
   let window: NSWindow
   let navigationController = NavigationController()
   let startController = StartViewController()
-  let connectionController = ConnectionController()
-  let videoSessionController = VideoSessionController()
   let mouseEventMonitor = MouseEventMonitor()
   let menuManager = MenuManager()
   
@@ -24,17 +22,16 @@ class ApplicationManager {
       .fullSizeContentView,
       .miniaturizable,
       .resizable
-      ] as NSWindow.StyleMask
+    ] as NSWindow.StyleMask
     window = NSWindow(contentRect: windowFrame, styleMask: styleMask, backing: .buffered, defer: false)
     window.titlebarAppearsTransparent = true
     window.isMovableByWindowBackground = true
-    window.contentView = navigationController.contentView
+    window.contentView = navigationController.view
     
-    connectionController.delegate = self
     mouseEventMonitor.delegate = self
     menuManager.delegate = self
     
-    navigationController.present(view: startController.view, transition: .none)
+    navigationController.push(controller: startController, transition: .none)
   }
   
   func run() {
@@ -55,15 +52,6 @@ extension ApplicationManager: MenuManagerDelegate {
   
   func quit() {
     NSApplication.shared.terminate(self)
-  }
-  
-}
-
-extension ApplicationManager: ConnectionControllerDelegate {
-  
-  func didConnect() {
-    navigationController.present(view: videoSessionController.view, transition: .none)
-    videoSessionController.videoSession.start()
   }
   
 }

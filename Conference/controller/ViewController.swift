@@ -1,9 +1,9 @@
 
 import AppKit
 
-protocol ViewController {
+protocol ViewController: class {
   
   var view: NSView { get }
-  var navigationController: NavigationController? { get }
+  weak var navigationController: NavigationController? { get set }
   
 }

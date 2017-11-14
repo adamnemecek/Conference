@@ -3,16 +3,25 @@ import AppKit
 
 class TextInput: NSView {
   
-  let inputField = NSTextField()
+  private let inputField = NSTextField()
+  
+  var text: String {
+    get {
+      return inputField.stringValue
+    }
+    set(value) {
+      inputField.stringValue = value
+    }
+  }
   
   init() {
     super.init(frame: .zero)
     wantsLayer = true
     layer?.backgroundColor = ColorTextBackground.cgColor
-    layer?.cornerRadius = 2
+    layer?.cornerRadius = 4
     addSubview(inputField)
     
-    inputField.font = NSFont.systemFont(ofSize: 32)
+    inputField.font = NSFont.systemFont(ofSize: 18)
     inputField.textColor = ColorText
     inputField.alignment = .center
     inputField.isBordered = false
@@ -26,6 +35,10 @@ class TextInput: NSView {
   
   required init?(coder decoder: NSCoder) {
     fatalError()
+  }
+  
+  override var intrinsicContentSize: NSSize {
+    return NSSize(width: NSView.noIntrinsicMetric, height: 32)
   }
     
 }

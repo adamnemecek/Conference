@@ -1,38 +1,43 @@
 
 import AppKit
 
-protocol ConnectionControllerDelegate: class {
+class ConnectionController: ViewController {
   
-  func didConnect()
-  
-}
-
-class ConnectionController {
-  
-  let view: NSView
+  let view = NSView()
   let connectionInput = TextInput()
   let connectButton = TextButton(title: "Connect", color: ColorGreen)
+  let backButton = TextButton(title: "Back", color: ColorBlue)
   
-  weak var delegate: ConnectionControllerDelegate?
+  weak var navigationController: NavigationController?
   
   init() {
-    view = NSView()
-    view.addSubview(connectionInput)
-    view.addSubview(connectButton)
-    view.translatesAutoresizingMaskIntoConstraints = false
+    let buttonStack = NSStackView()
+    let stackHeight = connectionInput.intrinsicContentSize.height + 12 + connectButton.intrinsicContentSize.height + 12 + backButton.intrinsicContentSize.height
+    
+    view.addSubview(buttonStack)
+    
+    buttonStack.translatesAutoresizingMaskIntoConstraints = false
+    buttonStack.orientation = .vertical
+    buttonStack.distribution = .equalSpacing
+    buttonStack.addArrangedSubview(connectionInput)
+    buttonStack.addArrangedSubview(connectButton)
+    buttonStack.addArrangedSubview(backButton)
+    buttonStack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    buttonStack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    buttonStack.widthAnchor.constraint(equalToConstant: 320).isActive = true
+    buttonStack.heightAnchor.constraint(equalToConstant: stackHeight).isActive = true
+    
     connectButton.onClick = {
-      self.delegate?.didConnect()
+      let videoSessionController = VideoSessionController()
+    //  self.navigationController?.push(controller: videoSessionController, transition: .slide)
     }
-    connectionInput.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-    connectionInput.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-    connectionInput.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
-    connectionInput.heightAnchor.constraint(equalToConstant: 44).isActive = true
-
-    connectButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    connectButton.topAnchor.constraint(equalTo: connectionInput.bottomAnchor, constant: 20).isActive = true
+    
+    backButton.onClick = {
+      self.navigationController?.pop(transition: .slide)
+    }
     
     PassPhraseGenerator(wordCount: 4) { passPhrase in
-      self.connectionInput.inputField.stringValue = passPhrase
+      self.connectionInput.text = passPhrase
     }
   }
   

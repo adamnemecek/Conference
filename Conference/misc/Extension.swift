@@ -91,21 +91,20 @@ extension NSMenu {
 
 extension NSView {
   
-  func removeTrackingAreas() {
-    for area in trackingAreas {
-      removeTrackingArea(area)
+  func animateConstraints(duration: TimeInterval, delay: TimeInterval = 0, animation: @escaping () -> Void) {
+    
+    func changes(context: NSAnimationContext) -> Void {
+      context.duration = duration
+      context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      context.allowsImplicitAnimation = true
+      animation()
+      self.layoutSubtreeIfNeeded()
     }
-  }
-  
-  func removeSubviews() {
-    for view in subviews {
-      view.removeFromSuperview()
-    }
-  }
-  
-  func removeConstraints() {
-    for constraint in constraints {
-      removeConstraint(constraint)
+
+    layoutSubtreeIfNeeded()
+    let delay = DispatchTime.now() + delay
+    DispatchQueue.main.asyncAfter(deadline: delay) {
+      NSAnimationContext.runAnimationGroup(changes, completionHandler: nil)
     }
   }
   

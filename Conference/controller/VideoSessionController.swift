@@ -2,12 +2,13 @@
 import AppKit
 import AVFoundation
 
-class VideoSessionController {
+class VideoSessionController: ViewController {
   
   let animationTime: TimeInterval
   let videoSession: VideoSession
   let videoPreviewView: VideoPreviewView
   let videoView: VideoView
+  weak var navigationController: NavigationController?
   
   var view: NSView {
     return videoView
